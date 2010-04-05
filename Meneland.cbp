@@ -14,6 +14,9 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add option="-lSDL_image -lSDL_ttf" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Meneland" prefix_auto="1" extension_auto="1" />
@@ -35,8 +38,25 @@
 		<Linker>
 			<Add option="`sdl-config --libs`" />
 		</Linker>
-		<Unit filename="cb.bmp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="src/button.cpp" />
+		<Unit filename="src/button.h" />
+		<Unit filename="src/camera.cpp" />
+		<Unit filename="src/camera.h" />
+		<Unit filename="src/field.cpp" />
+		<Unit filename="src/field.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/map.cpp" />
+		<Unit filename="src/map.h" />
+		<Unit filename="src/meneland.cpp" />
+		<Unit filename="src/meneland.h" />
+		<Unit filename="src/messagebox.cpp" />
+		<Unit filename="src/messagebox.h" />
+		<Unit filename="src/object.cpp" />
+		<Unit filename="src/object.h" />
+		<Unit filename="src/player.cpp" />
+		<Unit filename="src/player.h" />
+		<Unit filename="src/visible.cpp" />
+		<Unit filename="src/visible.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
