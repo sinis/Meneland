@@ -19,7 +19,9 @@
 Field::Field(FieldType _type, Object* _object):
 	type(_type), object(_object), available(false)
 {
-	std::string fileName = "data\\";
+	if (type == None) return;
+
+	std::string fileName = "data/";
 	switch (type)
 	{
 		case Grass:

@@ -14,6 +14,7 @@
 
 enum FieldType
 {
+	None,
 	Grass,
 	Bush,
 	Exit
