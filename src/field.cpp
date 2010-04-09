@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 6.04.2010
+// Data modyfikacji: 10.04.2010
 // Opis: Implementacja obs³ugi pola mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@
 Field::Field(FieldType _type, Object* _object):
 	type(_type), object(_object), available(false)
 {
-	if (type == None) return;
+	if (type == NoneField) return;
 
 	std::string fileName = "data/";
 	switch (type)
@@ -39,6 +39,15 @@ Field::Field(FieldType _type, Object* _object):
 	}
 
 	this->SetImage(fileName.c_str());
+}
+
+// Destruktor /////////////////////////////////////////////////////////////////
+// Opis:
+//  Destruktor czy¶ci pamiêæ po obiekcie. Je¶li do pola zosta³ przypisany
+//  obiekt - usuwa go.
+Field::~Field()
+{
+	if (object) delete object;
 }
 
 // HandleObject ///////////////////////////////////////////////////////////////

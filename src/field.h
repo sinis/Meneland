@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 6.04.2010
+// Data modyfikacji: 10.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej pole.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -12,18 +12,11 @@
 #include "visible.h" // Klasa bazowa.
 #include "object.h"
 
-enum FieldType
-{
-	None,
-	Grass,
-	Bush,
-	Exit
-};
-
 class Field: public Visible
 {
 public:
-	Field(FieldType _type, Object* _object = 0);
+	Field(FieldType _type = NoneField, Object* _object = 0);
+	~Field();
 
 	FieldType GetFieldType() const { return type; }
 	void SetFieldType(FieldType _type) { type = _type; }

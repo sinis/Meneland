@@ -12,14 +12,7 @@
 #include <SDL/SDL.h>
 #include "visible.h"
 #include "map.h"
-
-enum Direction // Wykorzystywane przy okre¶leniu ruchu i tekstury.
-{
-	Down = 0,
-	Up = 1,
-	Left = 2,
-	Right = 3
-};
+#include "global.h"
 
 class Player: public Visible
 {
