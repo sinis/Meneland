@@ -95,18 +95,18 @@ Map::~Map()
 //  Funkcja wy¶wietla zakres pól na ekranie.
 void Map::Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface)
 {
-	// Ka¿de pole ma wymiary 20x20px.
-	// Przesuniêcie ka¿dego pola x = (i - fromX) * 20
-	//                           y = (j - fromY) * 20
+	// Ka¿de pole ma wymiary 40x40px.
+	// Przesuniêcie ka¿dego pola x = (i - fromX) * 40
+	//                           y = (j - fromY) * 40
 	int xOffset = 0;
 	int yOffset = 0;
 	for (int i = fromX; i < toX; i++)
 	{
-		xOffset = (i - fromY) * 20;
+		xOffset = (i - fromY) * 40;
 
 		for (int j = fromY; j < toY; j++)
 		{
-			yOffset = (j - fromX) * 20;
+			yOffset = (j - fromX) * 40;
 
 			map[i][j].Show(xOffset, yOffset, surface);
 		}

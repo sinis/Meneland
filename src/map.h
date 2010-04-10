@@ -23,6 +23,9 @@ public:
 	bool IsMovePossible(int x, int y, Direction dir);
 	void MoveHandling(int x, int y);
 
+	int GetWidth() const { return Width; }
+	int GetHeight() const { return Height; }
+
 private:
 	int w, h; // Rozmiar mapy.
 	Field** map; // Mapa zbudowana z pól.

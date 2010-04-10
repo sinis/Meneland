@@ -15,13 +15,14 @@
 class Camera:
 {
 public:
-	Camera(const Map* _map, const Player* _player);
+	Camera(const Map* _map, const Player* _player, SDL_Surface* _surface);
 
 	void Show();
 
 private:
 	const Map* map;
 	const Player* player;
+	SDL_Surface* surface;
 };
 
 #endif // _CAMERA_H_ //////////////////////////////////////////////////////////
