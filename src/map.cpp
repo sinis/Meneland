@@ -13,8 +13,7 @@
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametr:
-//  - player: Player* - wska¼nik na obiekt gracza. Potrzebny aby ustawiæ jego
-//   po³o¿enie.
+//  - playerX, playerY: int& - po³o¿enie gracza.
 // Opis:
 //  Inicjalizuje mapê.
 //  1. Otwiera plik z danymi mapy.
@@ -22,7 +21,7 @@
 //  3. Tworzy pola mapy.
 //  4. Pobiera dane pól mapy i kolejno je ustawia.
 //  5. Ustawia pozycjê gracza.
-Map::Map(Player* player)
+Map::Map(int& playerX, int& playerY)
 {
 	std::ifstream file("data/map.txt");
 	file >> w >> h;
@@ -46,7 +45,7 @@ Map::Map(Player* player)
 
 			switch (buffer[j])
 			{
-				case (char) Player: filedType = Grass; palyer->SetX(i); player->SetY(j); break;
+				case (char) Player: fieldType = Grass; playerX = i; playerY = j; /*palyer->SetX(i); player->SetY(j);*/ break;
 				case (char) Grass: fieldType = Grass; break;
 				case (char) Bush: fieldType = Bush; break;
 				case (char) Exit: fieldType = Exit; break;

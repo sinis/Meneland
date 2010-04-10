@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 5.04.2010
+// Data modyfikacji: 10.04.2010
 // Opis: Implementacja obiektów wystêpuj±cych w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -75,53 +75,53 @@ void Object::SetObjectType(ObjectType _type)
 		// Literki
 		case H:
 			sThumb += "H.png";
-			image = "";
+			sImage = "";
 			break;
 		case L:
 			sThumb += "L.png";
-			image = "";
+			sImage = "";
 			break;
 		case M:
 			sThumb += "M.png";
-			image = "";
+			sImage = "";
 			break;
 		case N:
 			sThumb += "N.png";
-			image = "";
+			sImage = "";
 			break;
 		case O:
 			sThumb += "O.png";
-			image = "";
+			sImage = "";
 			break;
 		case P:
 			sThumb += "P.png";
-			image = "";
+			sImage = "";
 			break;
 		case R:
 			sThumb += "R.png";
-			image = "";
+			sImage = "";
 			break;
 		case U:
 			sThumb += "U.png";
-			image = "";
+			sImage = "";
 			break;
 		case W:
 			sThumb += "W.png";
-			image = "";
+			sImage = "";
 			break;
 		case Y:
 			sThumb += "Y.png";
-			image = "";
+			sImage = "";
 			break;
 		case Z:
 			sThumb += "Z.png";
-			image = "";
+			sImage = "";
 			break;
 	}
 
 	Visible::SetImage(sThumb.c_str());
 	if (!sImage.empty())
-		objectImage = IMG_Load(sImage.c_str())
+		objectImage = IMG_Load(sImage.c_str());
 }
 
 // Handling ///////////////////////////////////////////////////////////////////

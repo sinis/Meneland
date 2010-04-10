@@ -9,19 +9,20 @@
 #ifndef _CAMERA_H_
 #define _CAMERA_H_
 
-#include "map.h"
+#include <SDL/SDL.h>
 #include "player.h"
+#include "map.h"
 
-class Camera:
+class Camera
 {
 public:
-	Camera(const Map* _map, const Player* _player, SDL_Surface* _surface);
+	Camera(Map* _map, Player* _player, SDL_Surface* _surface);
 
 	void Show();
 
 private:
-	const Map* map;
-	const Player* player;
+	Map* map;
+	Player* player;
 	SDL_Surface* surface;
 };
 

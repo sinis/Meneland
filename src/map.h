@@ -11,20 +11,19 @@
 
 #include "field.h"
 #include "global.h"
-#include "player.h"
 
 class Map
 {
 public:
-	Map(Player* player);
+	Map(int& playerX, int& playerY);
 	~Map();
 
 	void Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface);
 	bool IsMovePossible(int x, int y, Direction dir);
 	void MoveHandling(int x, int y);
 
-	int GetWidth() const { return Width; }
-	int GetHeight() const { return Height; }
+	int GetWidth() const { return w; }
+	int GetHeight() const { return h; }
 
 private:
 	int w, h; // Rozmiar mapy.

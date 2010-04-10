@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 6.04.2010
+// Data modyfikacji: 10.04.2010
 // Opis: Deklaracja klasy bazowej dla widocznych obiektów w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -20,7 +20,7 @@ public:
 	bool SetImage(const char* fileName);
 	virtual void Show(int x, int y, SDL_Surface* surface);
 
-private:
+protected:
 	SDL_Surface* image; // Obraz do wy¶wietlenia.
 };
 

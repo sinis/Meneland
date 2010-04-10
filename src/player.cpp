@@ -17,7 +17,7 @@
 // Opis:
 //  Konstruktor inicjalizuje obiekt gracza.
 //  Ustawia jego zmienne oraz ³aduje tekstury.
-Player::Player(int _x, int _y, const Map* _map):
+Player::Player(int _x, int _y, Map* _map):
 	x(_x), y(_y), map(_map), dir(Down)
 {
 	textures[Down] = IMG_Load("data/players.png");
@@ -45,7 +45,7 @@ Player::~Player()
 //  Je¶li tak - przesuwa gracza.
 void Player::Move(Direction _dir)
 {
-	if (Map->IsMovePossible(x, y, _dir))
+	if (map->IsMovePossible(x, y, _dir))
 	{
 		switch (_dir)
 		{
@@ -74,5 +74,5 @@ void Player::Move(Direction _dir)
 void Player::ChangeTexture(Direction _dir)
 {
 	dir = _dir;
-	image = texture[dir];
+	image = textures[dir];
 }

@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 9.04.2010
+// Data modyfikacji: 10.04.2010
 // Opis: Deklaracja klasy odpowiedzialnej za obs³ugê playera.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -17,7 +17,7 @@
 class Player: public Visible
 {
 public:
-	Player(int _x, int _y, const Map* _map);
+	Player(int _x, int _y, Map* _map);
 	~Player();
 
 	int GetX() const { return x; }
@@ -34,7 +34,7 @@ private:
 	int x, y; // Wspó³rzêdne gracza.
 	Direction dir; // Ustawienie gracza.
 	SDL_Surface* textures[4]; // Jego tekstury.
-	const Map* map;
+	Map* map;
 };
 
 #endif // _PLAYER_H_ //////////////////////////////////////////////////////////
