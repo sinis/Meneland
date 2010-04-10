@@ -26,7 +26,7 @@ public:
 
 	void HandleObject();
 
-	void IsAvailable() const { return available; }
+	bool IsAvailable() const { return available; }
 	void SetAvailable(bool _a) { available = _a; }
 
 	void Show(int x, int y, SDL_Surface* surface); // Trzeba przes³oniæ. Je¶li jest przypisany object

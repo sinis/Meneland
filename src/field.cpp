@@ -69,7 +69,7 @@ void Field::HandleObject()
 //  - surface: SDL_Surface* - powierzchnia.
 // Opis:
 //  Funkcja odrysowywuje pole, a na nim przechowywany object (je¶li posiada).
-void Show(int x, int y, SDL_Surface* surface)
+void Field::Show(int x, int y, SDL_Surface* surface)
 {
 	Visible::Show(x, y, surface);
 	if (object) object->Show(x, y, surface);

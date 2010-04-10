@@ -85,3 +85,80 @@ Map::~Map()
 		delete [] map[i];
 	delete [] map;
 }
+
+// Show ///////////////////////////////////////////////////////////////////////
+// Parametry:
+//  - fromX, fromY: int - wspó³rzêdne pola, od którego zacz±æ wy¶wietlanie
+//  - toX, toY: int - wspó³rzêdne pola, na którym zakoñczyæ wy¶wietlanie.
+//  - surface: SDL_Surface* - powierzchnia, na której wy¶wietliæ obraz.
+// Opis:
+//  Funkcja wy¶wietla zakres pól na ekranie.
+void Map::Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface)
+{
+	// Ka¿de pole ma wymiary 20x20px.
+	// Przesuniêcie ka¿dego pola x = (i - fromX) * 20
+	//                           y = (j - fromY) * 20
+	int xOffset = 0;
+	int yOffset = 0;
+	for (int i = fromX; i < toX; i++)
+	{
+		xOffset = (i - fromY) * 20;
+
+		for (int j = fromY; j < toY; j++)
+		{
+			yOffset = (j - fromX) * 20;
+
+			map[i][j].Show(xOffset, yOffset, surface);
+		}
+	}
+}
+
+// IsMovePossible /////////////////////////////////////////////////////////////
+// Parametry:
+//  - x, y: int - po³o¿enie gracza
+//  - dir: Direction - kierunek, w którym gracz chce siê udaæ.
+// Opis:
+//  Na podstawie podanych parametrów funkcja sprawdza czy ruch gracza jest
+//  mo¿liwy do zrealizowania.
+// Zwraca:
+//  - true - je¶li tak.
+//  - false - w przeciwnym wypadku.
+bool Map::IsMovePossible(int x, int y, Direction dir)
+{
+	// Ruch jest mo¿liwy je¶li pole, na które gracz chce wej¶æ istnieje, oraz
+	// jest oznaczone jako available.
+
+	switch (dir)
+	{
+		case Up:
+			y--;
+			if (y < 0) return false; // Pole nie istnieje.
+			break;
+		case Down:
+			y++;
+			if (y >= h) return false; // Pole nie istnieje.
+			break;
+		case Left:
+			x--;
+			if (x < 0) return false; // Pole nie istnieje.
+			break;
+		case Right:
+			x++;
+			if (x >= w) return false; // Pole nie istnieje.
+			break;
+	}
+
+	// Je¶li wykonanie dosz³o tutaj - ruch jest mo¿liwy je¶li pole docelowe
+	// jest oznaczone jako available.
+	return map[x][y].IsAvailable();
+}
+
+// MoveHandling ///////////////////////////////////////////////////////////////
+// Parametry:
+//  - x, y: int - po³o¿enie gracza.
+// Opis:
+//  Funkcja przekazuje wykonanie do funkcji obs³ugi pola.
+void Map::MoveHandling(int x, int y)
+{
+	map[x][y].HandleObject();
+}

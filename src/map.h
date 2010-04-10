@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 9.04.2010
+// Data modyfikacji: 10.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej mapê.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -19,13 +19,13 @@ public:
 	Map(Player* player);
 	~Map();
 
-	void Show(int fromX, int fromY, int toX, int toY);
+	void Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface);
 	bool IsMovePossible(int x, int y, Direction dir);
-	void MoveHandling();
+	void MoveHandling(int x, int y);
 
 private:
 	int w, h; // Rozmiar mapy.
-	Field map[][]; // Mapa zbudowana z pól.
+	Field** map; // Mapa zbudowana z pól.
 };
 
 #endif // _MAP_H_ /////////////////////////////////////////////////////////////
