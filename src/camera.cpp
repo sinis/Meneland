@@ -15,7 +15,7 @@
 //  - _surface: SDL_Surface* - powierzchnia gry.
 // Opis:
 //  Inicjalizuje wska¼niki wymagane do odrysowywania gry.
-Camera::Camera(Map* _map, Player* _player, SDL_Surface* _surface):
+Camera::Camera(Map* _map, Player::Player* _player, SDL_Surface* _surface):
 	map(_map), player(_player), surface(_surface)
 {}
 

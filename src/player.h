@@ -30,7 +30,6 @@ public:
 private:
 	void ChangeTexture(Direction _dir);
 
-private:
 	int x, y; // Wspó³rzêdne gracza.
 	Direction dir; // Ustawienie gracza.
 	SDL_Surface* textures[4]; // Jego tekstury.

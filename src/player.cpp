@@ -18,7 +18,7 @@
 //  Konstruktor inicjalizuje obiekt gracza.
 //  Ustawia jego zmienne oraz ³aduje tekstury.
 Player::Player(int _x, int _y, Map* _map):
-	x(_x), y(_y), map(_map), dir(Down)
+	x(_x), y(_y), dir(Down), map(_map)
 {
 	textures[Down] = IMG_Load("data/players.png");
 	textures[Up] = IMG_Load("data/playern.png");

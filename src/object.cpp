@@ -16,7 +16,7 @@
 // Opis:
 //  Funkcja konstruuje object na podstawie podanego typu.
 Object::Object(ObjectType _type):
-	objectImage(0), type(_type)
+	type(_type), objectImage(0)
 {
 	SetObjectType(type);
 }
@@ -52,24 +52,24 @@ void Object::SetObjectType(ObjectType _type)
 		case Lesny:
 			sImage += "lesny.png";
 			sThumb += "lesny-min.png";
-			description = "O, patrz, znalaz³e¶ Le¶ny Dzban. Wytwór winopodobny, znany równie¿ pod\n";
-						  "nazw± \"jabol\". Zawarto¶æ siarki umo¿liwia jego picie, a jednak jeste¶\n";
-						  "twardy i pijesz. Dlaczego? Mo¿e ze wzglêdu na jego wyj±tkowo¶æ. A mo¿e\n";
-						  "po prostu ¿al Ci wydanych pieniêdzy. Tak czy inaczej Le¶ny spity\n";
+			description = "O, patrz, znalaz³e¶ Le¶ny Dzban. Wytwór winopodobny, znany równie¿ pod\n"
+						  "nazw± \"jabol\". Zawarto¶æ siarki umo¿liwia jego picie, a jednak jeste¶\n"
+						  "twardy i pijesz. Dlaczego? Mo¿e ze wzglêdu na jego wyj±tkowo¶æ. A mo¿e\n"
+						  "po prostu ¿al Ci wydanych pieniêdzy. Tak czy inaczej Le¶ny spity\n"
 						  "w ³adny dzieñ na ³±ce dodaje ¿yciu kolorów.";
 			break;
 		case Rosolek:
 			sImage += "rosolek.png";
 			sThumb += "rosolek-min.png";
-			description = "Rosó³. Potrawa jedzona zwykle podczas niedzielnych obiadów. Jednym\n";
-						  "smakuje bardziej, drugim mniej. Tak czy inaczej ¶wietnie rozgrzewa.\n";
-						  "Jednak uwa¿aj. Z mag± mo¿na przesadziæ.\n\n";
+			description = "Rosó³. Potrawa jedzona zwykle podczas niedzielnych obiadów. Jednym\n"
+						  "smakuje bardziej, drugim mniej. Tak czy inaczej ¶wietnie rozgrzewa.\n"
+						  "Jednak uwa¿aj. Z mag± mo¿na przesadziæ.\n\n"
 						  "\"Leo¶, wpierdalaj roso³ek.\"";
 			break;
 		case Komputer:
 			sImage += "komputer.png";
 			sThumb += "komputer-min.png";
-			description = "Znalaz³e¶ komputer. Teraz mo¿esz poszukaæ kolegów w internecie.\n";
+			description = "Znalaz³e¶ komputer. Teraz mo¿esz poszukaæ kolegów w internecie.\n"
 						  "Kto wie? Mo¿e znajd± siê jacy¶ menele w okolicy...";
 			break;
 		// Literki

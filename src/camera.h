@@ -16,13 +16,13 @@
 class Camera
 {
 public:
-	Camera(Map* _map, Player* _player, SDL_Surface* _surface);
+	Camera(Map* _map, Player::Player* _player, SDL_Surface* _surface);
 
 	void Show();
 
 private:
 	Map* map;
-	Player* player;
+	Player::Player* player;
 	SDL_Surface* surface;
 };
 
