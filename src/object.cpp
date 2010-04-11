@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 11.04.2010
 // Opis: Implementacja obiektów wystêpuj±cych w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -125,10 +125,13 @@ void Object::SetObjectType(ObjectType _type)
 }
 
 // Handling ///////////////////////////////////////////////////////////////////
+// Parametr:
+//  - surface: SDL_Surface* - powierzchnia, na której odrysowany bêdzie
+//   MessageBox.
 // Opis:
 //  Funkcja odpowiada za zdarzenie gdy gracz wejdzie na podany obiekt.
 //  Wy¶wietla komunikat z opisem i obrazem obiektu.
-void Object::Handling()
+void Object::Handling(SDL_Surface* surface)
 {
-	// MessageBox::Show(description.c_str(), objectImage);
+	MessageBox::Show(description, objectImage, surface);
 }

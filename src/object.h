@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 9.04.2010
+// Data modyfikacji: 11.04.2010
 // Opis: Deklaracja klasy odpowiedzialnej za obiekty w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ class Object: public Visible
 public:
 	Object(ObjectType _type);
 
-	void Handling(); // Obs³uga objectu.
+	void Handling(SDL_Surface* surface); // Obs³uga objectu.
 
 	void SetObjectType(ObjectType _type);
 	ObjectType GetObjectType() const { return type; }

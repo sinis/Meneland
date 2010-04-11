@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 11.04.2010
 // Opis: Implementacja obs³ugi pola mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -51,13 +51,15 @@ Field::~Field()
 }
 
 // HandleObject ///////////////////////////////////////////////////////////////
+// Parametr:
+//  - surface: SDL_Surface* - powierzchnia przekazywana obiektowi.
 // Opis:
 //  Funkcja przekazuje obs³ugê objectowi. Po wszystkim usuwa go.
-void Field::HandleObject()
+void Field::HandleObject(SDL_Surface* surface)
 {
 	if (object)
 	{
-		object->Handling();
+		object->Handling(surface);
 		delete object;
 		object = 0;
 	}

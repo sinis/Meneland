@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 11.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej mapê.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -20,7 +20,7 @@ public:
 
 	void Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface);
 	bool IsMovePossible(int x, int y, Direction dir);
-	void MoveHandling(int x, int y);
+	void MoveHandling(int x, int y, SDL_Surface* surface);
 
 	int GetWidth() const { return w; }
 	int GetHeight() const { return h; }

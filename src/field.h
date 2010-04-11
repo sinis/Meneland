@@ -24,7 +24,7 @@ public:
 	const Object* GetObject() const { return object; }
 	void SetObject(const Object* _object) { object = object; }
 
-	void HandleObject();
+	void HandleObject(SDL_Surface* surface);
 
 	bool IsAvailable() const { return available; }
 	void SetAvailable(bool _a) { available = _a; }

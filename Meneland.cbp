@@ -44,6 +44,7 @@
 		<Unit filename="src/camera.h" />
 		<Unit filename="src/field.cpp" />
 		<Unit filename="src/field.h" />
+		<Unit filename="src/getpixel.cpp" />
 		<Unit filename="src/global.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/map.cpp" />

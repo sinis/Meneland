@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 11.04.2010
 // Opis: Implementacja obs³ugi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -155,9 +155,10 @@ bool Map::IsMovePossible(int x, int y, Direction dir)
 // MoveHandling ///////////////////////////////////////////////////////////////
 // Parametry:
 //  - x, y: int - po³o¿enie gracza.
+//  - surface: SDL_Surface* - powierzchnia przekazywana do obiektu.
 // Opis:
 //  Funkcja przekazuje wykonanie do funkcji obs³ugi pola.
-void Map::MoveHandling(int x, int y)
+void Map::MoveHandling(int x, int y, SDL_Surface* surface)
 {
-	map[x][y].HandleObject();
+	map[x][y].HandleObject(surface);
 }
