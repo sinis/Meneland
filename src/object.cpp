@@ -118,6 +118,8 @@ void Object::SetObjectType(ObjectType _type)
 			sThumb += "Z.png";
 			sImage = "";
 			break;
+		case NoneObject:
+			break; // ¯eby kompilator nie krzycza³.
 	}
 
 	Visible::SetImage(sThumb.c_str());

@@ -17,7 +17,7 @@
 // Opis:
 //  Inicjalizuje obiekt, oraz czcionki.
 MessageBox::MessageBox(std::string& _text, SDL_Surface* _objectImage):
-	text(_text), objectImage(_objectImage), button(new Button(400, 300, "OK"))
+	button(new Button(400, 300, "OK")), text(_text), objectImage(_objectImage)
 {
 	Visible::SetImage("data/paper.png");
 	font = TTF_OpenFont("data/font.ttf", 15);

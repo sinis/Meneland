@@ -90,7 +90,15 @@ void Camera::Show()
 		playerY = (playerY - fromY) * 40;
 	}
 
+	// No ta... Nie wzi±³em pod uwagê sytuacji, gdy rozmiar mapy jest mniejszy ni¿
+	// 16x8.
+	int toX = fromX + 15, toY = fromY + 7;
+	if (toX >= map->GetWidth()) toX = map->GetWidth();
+	if (toY >= map->GetHeight()) toY = map->GetHeight();
+
 	// Wy¶wietlenie wszystkiego wedle ustawieñ.
-	map->Show(fromX, fromY, fromX + 15, fromY + 7, surface);
+	map->Show(fromX, fromY, toX, toY, surface);
 	player->Show(playerX, playerY, surface);
+
+	SDL_Flip(surface);
 }

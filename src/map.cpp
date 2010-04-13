@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 13.04.2010
 // Opis: Implementacja obs³ugi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -45,7 +45,7 @@ Map::Map(int& playerX, int& playerY)
 
 			switch (buffer[j])
 			{
-				case (char) Player: fieldType = Grass; playerX = i; playerY = j; /*palyer->SetX(i); player->SetY(j);*/ break;
+				case (char) Start: fieldType = Grass; playerX = j; playerY = i; /*palyer->SetX(i); player->SetY(j);*/ break;
 				case (char) Grass: fieldType = Grass; break;
 				case (char) Bush: fieldType = Bush; break;
 				case (char) Exit: fieldType = Exit; break;
@@ -66,9 +66,9 @@ Map::Map(int& playerX, int& playerY)
 				case (char) Z: fieldType = Grass; objectType = Z; break;
 			}
 
-			map[i][j].SetFieldType(fieldType);
+			map[j][i].SetFieldType(fieldType);
 			if (objectType != NoneObject)
-				map[i][j].SetObject(new Object(objectType));
+				map[j][i].SetObject(new Object(objectType));
 		}
 	}
 	delete [] buffer;
@@ -158,7 +158,15 @@ bool Map::IsMovePossible(int x, int y, Direction dir)
 //  - surface: SDL_Surface* - powierzchnia przekazywana do obiektu.
 // Opis:
 //  Funkcja przekazuje wykonanie do funkcji obs³ugi pola.
-void Map::MoveHandling(int x, int y, SDL_Surface* surface)
+// Zwraca:
+//  - Exit - je¶li gracz wszed³ na pole wyj¶cia.
+//  - NoneField - w innym wypadku.
+FieldType Map::MoveHandling(int x, int y, SDL_Surface* surface)
 {
+	if (map[x][y].GetFieldType() == Exit)
+		return Exit;
+
 	map[x][y].HandleObject(surface);
+
+	return NoneField;
 }
