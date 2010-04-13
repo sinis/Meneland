@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 13.04.2010
 // Opis: Deklaracja klasy odpowiedzialnej za okna z komunikatami.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -10,6 +10,7 @@
 #define _MESSAGEBOX_H_
 
 #include <SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
 #include <string>
 #include "visible.h"
 #include "button.h"
@@ -32,6 +33,7 @@ private:
 	Button* button;
 	std::string text;
 	SDL_Surface* objectImage;
+	TTF_Font* font;
 };
 
 #endif // _MESSAGEBOX_H_ //////////////////////////////////////////////////////

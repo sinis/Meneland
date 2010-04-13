@@ -2,12 +2,13 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 13.04.2010
 // Opis: Implementacja obiektów wystêpuj±cych w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "object.h"
 #include <SDL/SDL_image.h>
+#include <cstdlib>
 #include "messagebox.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
@@ -134,4 +135,9 @@ void Object::SetObjectType(ObjectType _type)
 void Object::Handling(SDL_Surface* surface)
 {
 	MessageBox::Show(description, objectImage, surface);
+
+	if (type == Komputer)
+	{
+		system("start http://promhyl.oz.pl/");
+	}
 }

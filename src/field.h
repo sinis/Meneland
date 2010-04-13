@@ -2,15 +2,17 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 13.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej pole.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _FIELD_H_
 #define _FIELD_H_
 
+#include <SDL/SDL.h>
 #include "visible.h" // Klasa bazowa.
 #include "object.h"
+#include "global.h"
 
 class Field: public Visible
 {

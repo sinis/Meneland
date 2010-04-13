@@ -2,13 +2,14 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 13.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej mapê.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _MAP_H_
 #define _MAP_H_
 
+#include <SDL/SDL.h>
 #include "field.h"
 #include "global.h"
 

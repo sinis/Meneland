@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 13.04.2010
 // Opis: Deklaracja klasy odpowiedzialnej za obiekty w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -11,6 +11,7 @@
 
 #include "visible.h" // Klasa bazowa.
 #include <string>
+#include <SDL/SDL.h>
 #include "global.h"
 
 class Object: public Visible
