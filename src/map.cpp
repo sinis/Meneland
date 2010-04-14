@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 13.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Implementacja obs³ugi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -25,17 +25,25 @@ Map::Map(int& playerX, int& playerY)
 {
 	std::ifstream file("data/map.txt");
 	file >> w >> h;
-	file.ignore('\n');
+	file.ignore();
+
+	// Tworzy matrycê pól o rozmiarze mapy.
+	// map[x][y] (w = 4; h = 3)
+	// map -> x 0 1 2 3
+	//          v v v v
+	//        y 0 0 0 0
+	//          1 1 1 1
+	//          2 2 2 2
 
 	map = new Field*[w];
 	for (int i = 0; i < w; i++)
 		map[i] = new Field[h];
 
-	char* buffer = new char[w];
+	char* buffer = new char[w+1];
 	// Pêtla pobieraj±ca dane z pliku
 	for (int i = 0; i < h; i++)
 	{
-		file.getline(buffer, w);
+		file.getline(buffer, w+1);
 
 		// Pêtla ustawiaj±ca w³a¶ciwo¶ci pól.
 		for (int j = 0; j < w; j++)

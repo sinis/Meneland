@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Implementacja obs³ugi kamery.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -95,6 +95,9 @@ void Camera::Show()
 	int toX = fromX + 15, toY = fromY + 7;
 	if (toX >= map->GetWidth()) toX = map->GetWidth();
 	if (toY >= map->GetHeight()) toY = map->GetHeight();
+
+	// Przed wszystkim czy¶ci ekran.
+	SDL_FillRect(surface, &surface->clip_rect, SDL_MapRGB(surface->format, 0x00, 0x00, 0x00));
 
 	// Wy¶wietlenie wszystkiego wedle ustawieñ.
 	map->Show(fromX, fromY, toX, toY, surface);

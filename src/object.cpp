@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 13.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Implementacja obiektów wystêpuj±cych w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -36,7 +36,7 @@ void Object::SetObjectType(ObjectType _type)
 	std::string sImage = "data/";
 	std::string sThumb = "data/";
 
-	switch (type)
+	switch (_type)
 	{
 		case Gawith:
 			sImage += "gawith.png";
@@ -120,8 +120,12 @@ void Object::SetObjectType(ObjectType _type)
 			break;
 		case NoneObject:
 			break; // ¯eby kompilator nie krzycza³.
+		default:
+			type = NoneObject;
+			return;
 	}
 
+	type = _type;
 	Visible::SetImage(sThumb.c_str());
 	if (!sImage.empty())
 		objectImage = IMG_Load(sImage.c_str());
@@ -140,6 +144,6 @@ void Object::Handling(SDL_Surface* surface)
 
 	if (type == Komputer)
 	{
-		system("start http://promhyl.oz.pl/");
+		system("start http://promhyl.oz.pl/ | firefox http://promhyl.oz.pl/");
 	}
 }

@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 13.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej pole.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -21,10 +21,10 @@ public:
 	~Field();
 
 	FieldType GetFieldType() const { return type; }
-	void SetFieldType(FieldType _type) { type = _type; }
+	void SetFieldType(FieldType _type);
 
 	const Object* GetObject() const { return object; }
-	void SetObject(const Object* _object) { object = object; }
+	void SetObject(Object* _object) { object = _object; }
 
 	void HandleObject(SDL_Surface* surface);
 

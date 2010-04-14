@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Implemntacja obs³ugi przycisku.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -103,6 +103,8 @@ void Button::Show(SDL_Surface* surface)
 	rect.x = xOffset;
 	rect.y = yOffset;
 	SDL_BlitSurface(txt, 0, surface, &rect);
+
+	SDL_Flip(surface);
 
 	// Czy¶ci po tek¶cie.
 	SDL_FreeSurface(txt);

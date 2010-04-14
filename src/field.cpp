@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Implementacja obs³ugi pola mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -21,24 +21,7 @@ Field::Field(FieldType _type, Object* _object):
 {
 	if (type == NoneField) return;
 
-	std::string fileName = "data/";
-	switch (type)
-	{
-		case Grass:
-			available = true;
-			fileName += "grass.png";
-			break;
-		case Bush:
-			available = false;
-			fileName += "bush.png";
-			break;
-		case Exit:
-			available = true;
-			fileName += "exit.png";
-			break;
-	}
-
-	this->SetImage(fileName.c_str());
+	this->SetFieldType(type);
 }
 
 // Destruktor /////////////////////////////////////////////////////////////////
@@ -75,4 +58,35 @@ void Field::Show(int x, int y, SDL_Surface* surface)
 {
 	Visible::Show(x, y, surface);
 	if (object) object->Show(x, y, surface);
+}
+
+// SetFieldType ///////////////////////////////////////////////////////////////
+// Parametr:
+//  - _type: FieldType - typ pola.
+// Opis:
+//  Funkcja ³aduje dane pola.
+void Field::SetFieldType(FieldType _type)
+{
+	std::string fileName = "data/";
+	switch (_type)
+	{
+		case Grass:
+			available = true;
+			fileName += "grass.png";
+			break;
+		case Bush:
+			available = false;
+			fileName += "bush.png";
+			break;
+		case Exit:
+			available = true;
+			fileName += "exit.png";
+			break;
+		default:
+			type = NoneField;
+			return;
+	}
+
+	type = _type;
+	this->SetImage(fileName.c_str());
 }

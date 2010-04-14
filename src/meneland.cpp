@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 13.04.2010
+// Data modyfikacji: 14.04.2010
 // Opis: Implementacja g³ównej klasy gry.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -82,7 +82,8 @@ int Meneland::Execute()
 		if (map->MoveHandling(player->GetX(), player->GetY(), screen) == Exit)
 			quit = true;
 
-		SDL_Delay(100);
+		SDL_PumpEvents();
+		SDL_Delay(90);
 	}
 
 	return 0;
