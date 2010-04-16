@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 14.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Implementacja obiektów wystêpuj±cych w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -20,6 +20,14 @@ Object::Object(ObjectType _type):
 	type(_type), objectImage(0)
 {
 	SetObjectType(type);
+}
+
+// Destruktor /////////////////////////////////////////////////////////////////
+// Opis:
+//  Wywala objectImage.
+Object::~Object()
+{
+	SDL_FreeSurface(objectImage);
 }
 
 // SetObjectType //////////////////////////////////////////////////////////////

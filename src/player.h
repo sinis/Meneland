@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 10.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Deklaracja klasy odpowiedzialnej za obs³ugê playera.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ class Player: public Visible
 {
 public:
 	Player(int _x, int _y, Map* _map);
-	~Player();
+	virtual ~Player();
 
 	int GetX() const { return x; }
 	void SetX(int _x) { x = _x; }

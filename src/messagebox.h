@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 13.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Deklaracja klasy odpowiedzialnej za okna z komunikatami.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -10,7 +10,7 @@
 #define _MESSAGEBOX_H_
 
 #include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
+//#include <SDL/SDL_ttf.h>
 #include <string>
 #include "visible.h"
 #include "button.h"
@@ -19,7 +19,7 @@ class MessageBox: public Visible
 {
 public:
 	MessageBox(std::string& _text, SDL_Surface* _objectImage = 0);
-	~MessageBox();
+	virtual ~MessageBox();
 
 	static void Show(std::string& _text, SDL_Surface* _objectImage, SDL_Surface* surface);
 	void Show(SDL_Surface* surface);
@@ -33,7 +33,7 @@ private:
 	Button* button;
 	std::string text;
 	SDL_Surface* objectImage;
-	TTF_Font* font;
+	//TTF_Font* font;
 };
 
 #endif // _MESSAGEBOX_H_ //////////////////////////////////////////////////////

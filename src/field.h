@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 14.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej pole.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ class Field: public Visible
 {
 public:
 	Field(FieldType _type = NoneField, Object* _object = 0);
-	~Field();
+	virtual ~Field();
 
 	FieldType GetFieldType() const { return type; }
 	void SetFieldType(FieldType _type);

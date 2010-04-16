@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 11.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Deklaracja klasy obs³uguj±cej przyciski.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ class Button: public Visible
 {
 public:
 	Button(int _x, int _y, const std::string& _text);
-	~Button();
+	virtual ~Button();
 
 	void HandleButton();
 	void Show(SDL_Surface* surface);
