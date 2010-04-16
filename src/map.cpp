@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 14.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Implementacja obs³ugi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -10,6 +10,7 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 #include <fstream>
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametr:
@@ -23,7 +24,7 @@
 //  5. Ustawia pozycjê gracza.
 Map::Map(int& playerX, int& playerY)
 {
-	std::ifstream file("data/map.txt");
+	std::ifstream file((Path::GetCWD() + "/data/map.txt").c_str());
 	file >> w >> h;
 	file.ignore();
 

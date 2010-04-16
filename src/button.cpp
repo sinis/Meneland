@@ -2,13 +2,14 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 14.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Implemntacja obs³ugi przycisku.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "button.h"
 #include <SDL/SDL_image.h>
 #include "global.h"
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
@@ -20,8 +21,8 @@
 Button::Button(int _x, int _y, const std::string& _text):
 	x(_x), y(_y), text(_text)
 {
-	Visible::SetImage("data/button.png");
-	font = TTF_OpenFont("data/font.ttf", 20);
+	Visible::SetImage((Path::GetCWD() + "/data/button.png").c_str());
+	font = TTF_OpenFont((Path::GetCWD() + "/data/font.ttf").c_str(), 20);
 }
 
 // Destruktor /////////////////////////////////////////////////////////////////
@@ -75,6 +76,7 @@ void Button::HandleButton()
 				}
 			}
 		}
+		SDL_Delay(100); // ¯eby procesora nie je¶æ.
 	}
 }
 

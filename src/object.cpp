@@ -10,6 +10,7 @@
 #include <SDL/SDL_image.h>
 #include <cstdlib>
 #include "messagebox.h"
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametr:
@@ -41,45 +42,55 @@ void Object::SetObjectType(ObjectType _type)
 	if (image) SDL_FreeSurface(image);
 
 	// W zale¿no¶ci od typu obiekt ma dobierany odpowiedni opis, obraz i miniaturê.
-	std::string sImage = "data/";
-	std::string sThumb = "data/";
+	std::string sImage = Path::GetCWD() + "/data/";
+	std::string sThumb = Path::GetCWD() + "/data/";
 
 	switch (_type)
 	{
 		case Gawith:
 			sImage += "gawith.png";
 			sThumb += "gawith-min.png";
-			description = "Znalaz³e¶ tabakê... U¿ywkê czêsto spotykan± w ró¿norakich ¶rodowiskach,\n"
-						  "od m³odzie¿owych, przez kopalniach, a¿ po koneserów. Dla jednych jest okazj±\n"
-						  "do manifestowania swojej (nie)dojrza³o¶ci, dla drugich po prostu konieczna,\n"
-						  "a dla trzecich, bo j± lubi±.\n"
-						  "Czêsto w ¿yciu spotykaj± Ciê chwile zadumy, chwile, w których chcesz siê\n"
-						  "odci±æ na chwilê od wszystkiego, chwile s³abo¶ci. Odpowiednio za¿yta tabaka\n"
-						  "mo¿e Ci te chwile os³odziæ. W osamotnieniu daæ u¶miech. W s³abo¶ci Azyl.\n"
+			description = "Znalaz³e¶ tabakê... U¿ywkê czêsto spotykan±\n"
+						  "w ró¿norakich ¶rodowiskach, od m³odzie¿owych,\n"
+						  "przez kopalniê, a¿ po koneserów. Dla jednych\n"
+						  " jest okazj± do manifestowania swojej\n"
+						  "(nie)dojrza³o¶ci, dla drugich po prostu\n"
+						  "konieczna, a dla trzecich, bo j± lubi±.\n"
+						  "Czêsto w ¿yciu spotykaj± Ciê chwile\n"
+						  "zadumy, chwile, w których chcesz siê\n"
+						  "odci±æ na od wszystkiego, chwile s³abo¶ci.\n"
+						  "Odpowiednio za¿yta tabaka mo¿e Ci te chwile\n"
+						  "os³odziæ. W osamotnieniu daæ u¶miech.\n"
+						  "W s³abo¶ci Azyl.\n"
 						  "W zadumie \"¶wie¿o¶æ\" umys³u.";
 			break;
 		case Lesny:
 			sImage += "lesny.png";
 			sThumb += "lesny-min.png";
-			description = "O, patrz, znalaz³e¶ Le¶ny Dzban. Wytwór winopodobny, znany równie¿ pod\n"
-						  "nazw± \"jabol\". Zawarto¶æ siarki umo¿liwia jego picie, a jednak jeste¶\n"
-						  "twardy i pijesz. Dlaczego? Mo¿e ze wzglêdu na jego wyj±tkowo¶æ. A mo¿e\n"
-						  "po prostu ¿al Ci wydanych pieniêdzy. Tak czy inaczej Le¶ny spity\n"
-						  "w ³adny dzieñ na ³±ce dodaje ¿yciu kolorów.";
+			description = "O, patrz, znalaz³e¶ Le¶ny Dzban. Wytwór\n"
+						  "winopodobny, znany równie¿ pod nazw± \"jabol\".\n"
+						  "Zawarto¶æ siarki umo¿liwia jego picie,\n"
+						  " a jednak jeste¶ twardy i pijesz. Dlaczego?\n"
+						  "Mo¿e ze wzglêdu na jego wyj±tkowo¶æ. A mo¿e\n"
+						  "po prostu ¿al Ci wydanych pieniêdzy.\n"
+						  "Tak czy inaczej Le¶ny spity w ³adny dzieñ\n"
+						  "na ³±ce dodaje ¿yciu kolorów.";
 			break;
 		case Rosolek:
 			sImage += "rosolek.png";
 			sThumb += "rosolek-min.png";
-			description = "Rosó³. Potrawa jedzona zwykle podczas niedzielnych obiadów. Jednym\n"
-						  "smakuje bardziej, drugim mniej. Tak czy inaczej ¶wietnie rozgrzewa.\n"
-						  "Jednak uwa¿aj. Z mag± mo¿na przesadziæ.\n\n"
+			description = "Rosó³. Potrawa jedzona zwykle podczas niedzielnych\n"
+						  "obiadów. Jednym smakuje bardziej, drugim mniej.\n"
+						  "Tak czy inaczej ¶wietnie rozgrzewa.\n"
+						  "Jednak uwa¿aj. Z mag± mo¿na przesadziæ.\n"
 						  "\"Leo¶, wpierdalaj roso³ek.\"";
 			break;
 		case Komputer:
 			sImage += "komputer.png";
 			sThumb += "komputer-min.png";
-			description = "Znalaz³e¶ komputer. Teraz mo¿esz poszukaæ kolegów w internecie.\n"
-						  "Kto wie? Mo¿e znajd± siê jacy¶ menele w okolicy...";
+			description = "Znalaz³e¶ komputer. Teraz mo¿esz poszukaæ\n"
+						  "kolegów w internecie. Kto wie? Mo¿e znajd±\n"
+						  "siê jacy¶ menele w okolicy...";
 			break;
 		// Literki
 		case H:
@@ -148,6 +159,9 @@ void Object::SetObjectType(ObjectType _type)
 //  Wy¶wietla komunikat z opisem i obrazem obiektu.
 void Object::Handling(SDL_Surface* surface)
 {
+	if (description.empty())
+		return;
+
 	MessageBox::Show(description, objectImage, surface);
 
 	if (type == Komputer)

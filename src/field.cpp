@@ -2,12 +2,13 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 14.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Implementacja obs³ugi pola mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "field.h"
 #include <string>
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
@@ -67,7 +68,7 @@ void Field::Show(int x, int y, SDL_Surface* surface)
 //  Funkcja ³aduje dane pola.
 void Field::SetFieldType(FieldType _type)
 {
-	std::string fileName = "data/";
+	std::string fileName = Path::GetCWD() + "/data/";
 	switch (_type)
 	{
 		case Grass:

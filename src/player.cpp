@@ -2,12 +2,13 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 9.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Implementacja obs³ugi playera.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "player.h"
 #include <SDL/SDL_image.h>
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
@@ -20,10 +21,10 @@
 Player::Player(int _x, int _y, Map* _map):
 	x(_x), y(_y), dir(Down), map(_map)
 {
-	textures[Down] = IMG_Load("data/players.png");
-	textures[Up] = IMG_Load("data/playern.png");
-	textures[Left] = IMG_Load("data/playere.png");
-	textures[Right] = IMG_Load("data/playerw.png");
+	textures[Down] = IMG_Load((Path::GetCWD() + "/data/players.png").c_str());
+	textures[Up] = IMG_Load((Path::GetCWD() + "/data/playern.png").c_str());
+	textures[Left] = IMG_Load((Path::GetCWD() + "/data/playere.png").c_str());
+	textures[Right] = IMG_Load((Path::GetCWD() + "/data/playerw.png").c_str());
 
 	image = textures[Down];
 }

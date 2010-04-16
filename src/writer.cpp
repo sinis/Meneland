@@ -2,13 +2,14 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 16.04.2010
-// Data modyfikacji: 160.04.2010
+// Data modyfikacji: 16.04.2010
 // Opis: Plik zawiera implementacjê klasy odpowiedzialnej za wypisywanie
 //  tekstu.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "writer.h"
 #include <vector>
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
@@ -20,7 +21,7 @@
 Writer::Writer(std::string& _text, int _x, int _y, SDL_Surface* _surface):
 	text(_text), x(_x), y(_y), surface(_surface)
 {
-	font = TTF_OpenFont("data/font.ttf", 12);
+	font = TTF_OpenFont((Path::GetCWD() + "/data/font.ttf").c_str(), 15);
 }
 
 // Desturktor /////////////////////////////////////////////////////////////////
@@ -60,8 +61,8 @@ void Writer::Write()
 			// przy koñcu - wrzuca liniê do vectora.
 			if (text[j] == '\n' || j + 1 == text.length())
 			{
-				linesVector.push_back(text.substr(from, j - from));
-				from = j;
+				linesVector.push_back(text.substr(from, j - from + 1));
+				from = j + 1;
 				break;
 			}
 		}
@@ -70,7 +71,7 @@ void Writer::Write()
 	// Pêtla kolejno odrysowuj±ca linie na ekranie.
 	for (int i = 0; i < linesCount; i++)
 	{
-		lineSurface = TTF_RenderText_Blended(font, linesVector[i].c_str(), {0, 0, 0});
+		lineSurface = TTF_RenderText_Blended(font, linesVector.at(i).c_str(), {0, 0, 0});
 		rect.x = x;
 		rect.y = y;
 		SDL_BlitSurface(lineSurface, 0, surface, &rect);

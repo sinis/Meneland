@@ -10,6 +10,7 @@
 #include <SDL/SDL_image.h>
 //#include <SDL/SDL_ttf.h>
 #include "writer.h"
+#include "path.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
@@ -20,7 +21,7 @@
 MessageBox::MessageBox(std::string& _text, SDL_Surface* _objectImage):
 	button(new Button(400, 300, "OK")), text(_text), objectImage(_objectImage)
 {
-	Visible::SetImage("data/paper.png");
+	Visible::SetImage((Path::GetCWD() + "/data/paper.png").c_str());
 	//font = TTF_OpenFont("data/font.ttf", 15);
 }
 
@@ -57,12 +58,12 @@ void MessageBox::Show(SDL_Surface* surface)
 	if (objectImage)
 	{
 		// Odrysowywuje obraz obiektu.
-		rect.x = 30; //(surface->w - objectImage->w)/2;
+		rect.x = 0; //(surface->w - objectImage->w)/2;
 		rect.y = (surface->h - objectImage->h)/2;
 		SDL_BlitSurface(objectImage, 0, surface, &rect);
 
 		// Odrysowywuje tekst obok.
-		rect.x = objectImage->w + 40; //(surface->w - txt->w) /2 + objectImage->w + 10;
+		rect.x = objectImage->w + 5; //(surface->w - txt->w) /2 + objectImage->w + 10;
 		rect.y = paperY + 10; //(surface->h - txt->h) /2;
 		//SDL_BlitSurface(txt, 0, surface, &rect);
 		Writer::Write(text, rect.x, rect.y, surface);
