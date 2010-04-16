@@ -54,7 +54,7 @@ void Camera::Show()
 	}*/ // Tego ifa trzeba rozbiæ.
 
 	// Standardowe ustawienia dla pozycji X w zakresie.
-	if (playerX >= 7 && playerX <= map->GetWidth() - 8)
+	if (playerX >= 7 && playerX < map->GetWidth() - 8)
 	{
 		fromX = playerX - 7;
 		playerX = (playerX - fromX) * 40;
@@ -68,12 +68,12 @@ void Camera::Show()
 	// Ustawienia dla X poza zakresem.
 	else
 	{
-		fromX = map->GetWidth() - 8;
+		fromX = map->GetWidth() - 16;
 		playerX = (playerX - fromX) * 40;
 	}
 
 	// Standardowe ustawienia dla pozycji Y w zakresie.
-	if (playerY >= 5 && playerY <= map->GetHeight() - 5)
+	if (playerY >= 5 && playerY < map->GetHeight() - 6)
 	{
 		fromY = playerY - 5;
 		playerY = (playerY - fromY) * 40;
@@ -86,13 +86,13 @@ void Camera::Show()
 	// Ustawienia dla X poza zakresem.
 	else
 	{
-		fromY = map->GetHeight() - 6;
+		fromY = map->GetHeight() - 12;
 		playerY = (playerY - fromY) * 40;
 	}
 
 	// No ta... Nie wzi±³em pod uwagê sytuacji, gdy rozmiar mapy jest mniejszy ni¿
-	// 16x8.
-	int toX = fromX + 15, toY = fromY + 7;
+	// 16x12.
+	int toX = fromX + 16, toY = fromY + 12;
 	if (toX >= map->GetWidth()) toX = map->GetWidth();
 	if (toY >= map->GetHeight()) toY = map->GetHeight();
 

@@ -110,11 +110,11 @@ void Map::Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface)
 	int yOffset = 0;
 	for (int i = fromX; i < toX; i++)
 	{
-		xOffset = (i - fromY) * 40;
+		xOffset = (i - fromX) * 40;
 
 		for (int j = fromY; j < toY; j++)
 		{
-			yOffset = (j - fromX) * 40;
+			yOffset = (j - fromY) * 40;
 
 			map[i][j].Show(xOffset, yOffset, surface);
 		}
