@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Implementacja obs³ugi playera.
+// Opis: Implementacja obsÅ‚ugi playera.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "player.h"
@@ -12,12 +12,12 @@
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
-//  - _x, _y: int - po³o¿enie gracza na mapie.
-//  - map: const Map* - sta³y wska¼nik na mapê. (aby gracz móg³ sprawdziæ czy
-//   ruch, który chce wykonaæ jest mo¿liwy)
+//  - _x, _y: int - poÅ‚oÅ¼enie gracza na mapie.
+//  - map: const Map* - staÅ‚y wskaÅºnik na mapÄ™. (aby gracz mÃ³gÅ‚ sprawdziÄ‡ czy
+//   ruch, ktÃ³ry chce wykonaÄ‡ jest moÅ¼liwy)
 // Opis:
 //  Konstruktor inicjalizuje obiekt gracza.
-//  Ustawia jego zmienne oraz ³aduje tekstury.
+//  Ustawia jego zmienne oraz Å‚aduje tekstury.
 Player::Player(int _x, int _y, Map* _map):
 	x(_x), y(_y), dir(Down), map(_map)
 {
@@ -31,7 +31,7 @@ Player::Player(int _x, int _y, Map* _map):
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
-//  Czy¶ci po obiekcie - usuwa tekstury.
+//  CzyÅ›ci po obiekcie - usuwa tekstury.
 Player::~Player()
 {
 	for (int i = 0; i < 4; i++)
@@ -40,10 +40,10 @@ Player::~Player()
 
 // Move ///////////////////////////////////////////////////////////////////////
 // Parametr:
-//  - _dir: Direction - kierunek, w którym ma siê poruszyæ postaæ gracza.
+//  - _dir: Direction - kierunek, w ktÃ³rym ma siÄ™ poruszyÄ‡ postaÄ‡ gracza.
 // Opis:
-//  Funkcja sprawdza dziêki wska¼nikowi na mapê, czy ruch mo¿e siê odbyæ.
-//  Je¶li tak - przesuwa gracza.
+//  Funkcja sprawdza dziÄ™ki wskaÅºnikowi na mapÄ™, czy ruch moÅ¼e siÄ™ odbyÄ‡.
+//  JeÅ›li tak - przesuwa gracza.
 void Player::Move(Direction _dir)
 {
 	if (map->IsMovePossible(x, y, _dir))
@@ -69,9 +69,9 @@ void Player::Move(Direction _dir)
 
 // ChangeTexture //////////////////////////////////////////////////////////////
 // Parametr:
-//  - _dir: Direction - wskazuje na teksturê.
+//  - _dir: Direction - wskazuje na teksturÄ™.
 // Opis:
-//  Zmienia teksturê gracza na podstawie argumentu.
+//  Zmienia teksturÄ™ gracza na podstawie argumentu.
 void Player::ChangeTexture(Direction _dir)
 {
 	dir = _dir;

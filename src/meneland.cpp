@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 14.04.2010
-// Opis: Implementacja g³ównej klasy gry.
+// Opis: Implementacja gÅ‚Ã³wnej klasy gry.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "meneland.h"
@@ -15,7 +15,7 @@
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
-//  Wy³±cza TTF i SDLa.
+//  WyÅ‚Ä…cza TTF i SDLa.
 Meneland::~Meneland()
 {
 	TTF_Quit();
@@ -26,8 +26,8 @@ Meneland::~Meneland()
 // Opis:
 //  Inicjalizuje SDLa, TTFa i tworzy screena.
 // Zwraca:
-//  - true - je¶li siê powiod³o.
-//  - false - je¶li nie.
+//  - true - jeÅ›li siÄ™ powiodÅ‚o.
+//  - false - jeÅ›li nie.
 bool Meneland::Init()
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -46,14 +46,14 @@ bool Meneland::Init()
 
 // Execute ////////////////////////////////////////////////////////////////////
 // Opis:
-//  G³ówna funkcja programu/gry/czego¶.
+//  GÅ‚Ã³wna funkcja programu/gry/czegoÅ›.
 // Zwraca:
-//  - 0 - je¶li wszystko ok.
-//  - -1 - je¶li b³±d.
+//  - 0 - jeÅ›li wszystko ok.
+//  - -1 - jeÅ›li bÅ‚Ä…d.
 int Meneland::Execute()
 {
-	// Na pocz±tku tworzy Mapê, Playera i Camerê. Ustawia playerowi miejsce
-	// na planszy i przechodzi do g³ównej pêtli.
+	// Na poczÄ…tku tworzy MapÄ™, Playera i CamerÄ™. Ustawia playerowi miejsce
+	// na planszy i przechodzi do gÅ‚Ã³wnej pÄ™tli.
 	int playerX, playerY;
 	Uint8* keystate = SDL_GetKeyState(0);
 	bool quit = false;
@@ -62,9 +62,9 @@ int Meneland::Execute()
 	Camera* camera = new Camera(map, player, screen);
 
 	camera->Show();
-	// G³ówna pêtla.
-	// Obs³uguje klawisza poci¶niêcie. Je¶li trzeba ruch wykonuje. Koñczy siê
-	// gdy gracz wejdzie na pole wyj¶cia.
+	// GÅ‚Ã³wna pÄ™tla.
+	// ObsÅ‚uguje klawisza pociÅ›niÄ™cie. JeÅ›li trzeba ruch wykonuje. KoÅ„czy siÄ™
+	// gdy gracz wejdzie na pole wyjÅ›cia.
 	while (!quit)
 	{
 		// Ruch

@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 13.04.2010
-// Opis: Deklaracja g≥Ûwnej klasy gry.
+// Opis: Deklaracja g≈Ç√≥wnej klasy gry.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _MENELAND_H_

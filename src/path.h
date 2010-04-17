@@ -3,9 +3,9 @@
 // Autor: Sinis
 // Data utworzenia: 16.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Plik zawiera deklaracjê klasy obs³uguj±cej aktualn± ¶cie¿kê do folderu
-//  roboczego. (w³a¶ciwie to bez sensu tworzyæ now± klasê, ale nie chce mi
-//  siê mêczyæ z funkcjami)
+// Opis: Plik zawiera deklaracjÄ™ klasy obsÅ‚ugujÄ…cej aktualnÄ… Å›cieÅ¼kÄ™ do folderu
+//  roboczego. (wÅ‚aÅ›ciwie to bez sensu tworzyÄ‡ nowÄ… klasÄ™, ale nie chce mi
+//  siÄ™ mÄ™czyÄ‡ z funkcjami)
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _PATH_H_

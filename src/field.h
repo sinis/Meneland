@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Deklaracja klasy obs≥uguj±cej pole.
+// Opis: Deklaracja klasy obs≈ÇugujƒÖcej pole.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _FIELD_H_
@@ -31,13 +31,13 @@ public:
 	bool IsAvailable() const { return available; }
 	void SetAvailable(bool _a) { available = _a; }
 
-	void Show(int x, int y, SDL_Surface* surface); // Trzeba przes≥oniÊ. Je∂li jest przypisany object
-	             // Wy∂wietla takøe jego.
+	void Show(int x, int y, SDL_Surface* surface); // Trzeba przes≈Çoniƒá. Je≈õli jest przypisany object
+	             // Wy≈õwietla tak≈ºe jego.
 
 private:
 	FieldType type;
 	Object* object;
-	bool available; // Czy moøna na pole wej∂Ê?
+	bool available; // Czy mo≈ºna na pole wej≈õƒá?
 };
 
 #endif // _FIELD_H_ ///////////////////////////////////////////////////////////

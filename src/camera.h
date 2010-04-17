@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 10.04.2010
-// Opis: Deklaracja klasy obs≥ugi kamery.
+// Opis: Deklaracja klasy obs≈Çugi kamery.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _CAMERA_H_

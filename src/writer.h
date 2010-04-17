@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 16.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Plik zawiera deklaracjê klasy odpowiedzialnej za wypisywanie tekstu.
+// Opis: Plik zawiera deklaracjÄ™ klasy odpowiedzialnej za wypisywanie tekstu.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _WRITER_H_

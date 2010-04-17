@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Implementacja obs³ugi pola mapy.
+// Opis: Implementacja obsÅ‚ugi pola mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "field.h"
@@ -13,10 +13,10 @@
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
 //  - type: FieldType - wskazuje na typ pola.
-//  - object: Object* - wska¼nik na obiekt z pola.
+//  - object: Object* - wskaÅºnik na obiekt z pola.
 // Opis:
 //  Na podstawie podanego typu konstruktor przypisuje polu odpowiedni obraz
-//  oraz parametr, czy gracz mo¿e wej¶æ na pole.
+//  oraz parametr, czy gracz moÅ¼e wejÅ›Ä‡ na pole.
 Field::Field(FieldType _type, Object* _object):
 	type(_type), object(_object), available(false)
 {
@@ -27,7 +27,7 @@ Field::Field(FieldType _type, Object* _object):
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
-//  Destruktor czy¶ci pamiêæ po obiekcie. Je¶li do pola zosta³ przypisany
+//  Destruktor czyÅ›ci pamiÄ™Ä‡ po obiekcie. JeÅ›li do pola zostaÅ‚ przypisany
 //  obiekt - usuwa go.
 Field::~Field()
 {
@@ -38,7 +38,7 @@ Field::~Field()
 // Parametr:
 //  - surface: SDL_Surface* - powierzchnia przekazywana obiektowi.
 // Opis:
-//  Funkcja przekazuje obs³ugê objectowi. Po wszystkim usuwa go.
+//  Funkcja przekazuje obsÅ‚ugÄ™ objectowi. Po wszystkim usuwa go.
 void Field::HandleObject(SDL_Surface* surface)
 {
 	if (object)
@@ -51,10 +51,10 @@ void Field::HandleObject(SDL_Surface* surface)
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Parametry:
-//  - x, y: int - wspó³rzêdne.
+//  - x, y: int - wspÃ³Å‚rzÄ™dne.
 //  - surface: SDL_Surface* - powierzchnia.
 // Opis:
-//  Funkcja odrysowywuje pole, a na nim przechowywany object (je¶li posiada).
+//  Funkcja odrysowywuje pole, a na nim przechowywany object (jeÅ›li posiada).
 void Field::Show(int x, int y, SDL_Surface* surface)
 {
 	Visible::Show(x, y, surface);
@@ -65,7 +65,7 @@ void Field::Show(int x, int y, SDL_Surface* surface)
 // Parametr:
 //  - _type: FieldType - typ pola.
 // Opis:
-//  Funkcja ³aduje dane pola.
+//  Funkcja Å‚aduje dane pola.
 void Field::SetFieldType(FieldType _type)
 {
 	std::string fileName = Path::GetCWD() + "/data/";

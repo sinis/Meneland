@@ -2,14 +2,14 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 9.04.2010
-// Data modyfikacji: 13.04.2010
+// Data modyfikacji: 17.04.2010
 // Opis: Plik zawiera globalne symbole dla klas.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _GLOBAL_H_
 #define _GLOBAL_H_
 
-enum Direction // Wykorzystywane przy okre∂leniu ruchu i tekstury gracza.
+enum Direction // Wykorzystywane przy okre≈õleniu ruchu i tekstury gracza.
 {
 	Down = 0,
 	Up = 1,
@@ -33,6 +33,8 @@ enum ObjectType // Typ obiektu.
 	Lesny = 'l',
 	Rosolek = 'r',
 	Komputer = 'k',
+	Pies = 'p',
+	Kaktus = 'c',
 	H = 'H', L = 'L', M = 'M', N = 'N', O = 'O', P = 'P', R = 'R',
 	U = 'U', W = 'W', Y = 'Y', Z = 'Z' // PROMHYLOWNZYOU
 };

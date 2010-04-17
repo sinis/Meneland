@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Implemntacja obs≥ugi przycisku.
+// Opis: Implemntacja obs≈Çugi przycisku.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "button.h"
@@ -13,11 +13,11 @@
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
-//  - _x, _y: int - po≥oøenie buttona.
+//  - _x, _y: int - po≈Ço≈ºenie buttona.
 //  - _text: std::string& - napis na buttonie
 // Opis:
-//  Inicjalizuje obraz buttona, jego po≥oøenie oraz napis na nim.
-//  Dodatkowo otwiera czcionkÍ. TTF_Init() powinno zostaÊ wywo≥ane wcze∂niej.
+//  Inicjalizuje obraz buttona, jego po≈Ço≈ºenie oraz napis na nim.
+//  Dodatkowo otwiera czcionkƒô. TTF_Init() powinno zostaƒá wywo≈Çane wcze≈õniej.
 Button::Button(int _x, int _y, const std::string& _text):
 	x(_x), y(_y), text(_text)
 {
@@ -35,10 +35,10 @@ Button::~Button()
 
 // HandleButton ///////////////////////////////////////////////////////////////
 // Opis:
-//  Funkcja odpowiada za obs≥ugÍ buttona.
-//  KoÒczy swoje dzia≥anie dopiero w momencie klikniÍcia na button. KlikniÍcie
-//  musi siÍ odbyÊ na widocznej czÍ∂ci przycisku. (trzeba bÍdzie grzebaÊ za
-//  nieprzeºroczystymi pikselami)
+//  Funkcja odpowiada za obs≈Çugƒô buttona.
+//  Ko≈Ñczy swoje dzia≈Çanie dopiero w momencie klikniƒôcia na button. Klikniƒôcie
+//  musi siƒô odbyƒá na widocznej czƒô≈õci przycisku. (trzeba bƒôdzie grzebaƒá za
+//  nieprze≈∫roczystymi pikselami)
 void Button::HandleButton()
 {
 	SDL_Event event;
@@ -51,42 +51,42 @@ void Button::HandleButton()
 			if (event.type == SDL_MOUSEBUTTONDOWN &&
 				event.button.button == SDL_BUTTON_LEFT)
 			{
-				// KlikniÍcie lewym przyciskiem myszy.
-				// Wypada sprawdziÊ czy w obrÍbie buttona.
+				// Klikniƒôcie lewym przyciskiem myszy.
+				// Wypada sprawdziƒá czy w obrƒôbie buttona.
 				int mouseX = event.motion.x;
 				int mouseY = event.motion.y;
 
 				if (mouseX >= x && mouseX <= image->w + x &&
 					mouseY >= y && mouseY <= image->h + y)
 				{
-					// Czyli jeste∂my w prostok±cie mieszcz±cym button.
-					// Tutaj wypada sprawdziÊ czy klikniÍty piksel nie jest
-					// przeºroczysty.
+					// Czyli jeste≈õmy w prostokƒÖcie mieszczƒÖcym button.
+					// Tutaj wypada sprawdziƒá czy klikniƒôty piksel nie jest
+					// prze≈∫roczysty.
 
-					// Trzeba obliczyÊ po≥oøenie piksela na obrazie przycisku.
+					// Trzeba obliczyƒá po≈Ço≈ºenie piksela na obrazie przycisku.
 					int pixelX = mouseX - x;
 					int pixelY = mouseY - y;
 					Uint32 pixel = getpixel(image, pixelX, pixelY);
 					Uint8 rgba[4];
 					SDL_GetRGBA(pixel, image->format, &rgba[0], &rgba[1], &rgba[2], &rgba[3]);
 
-					// Je∂li piksel jest nieprzeºroczysty zatwierdza klikniÍcie.
+					// Je≈õli piksel jest nieprze≈∫roczysty zatwierdza klikniƒôcie.
 					if (rgba[3] == 0xff)
 						quit = true;
 				}
 			}
 		}
-		SDL_Delay(100); // Øeby procesora nie je∂Ê.
+		SDL_Delay(100); // ≈ªeby procesora nie je≈õƒá.
 	}
 }
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Parametr:
-//  - surface: SDL_Surface* - powierzchnia, na ktÛrej naleøy odrysowaÊ
+//  - surface: SDL_Surface* - powierzchnia, na kt√≥rej nale≈ºy odrysowaƒá
 //   przycisk.
 // Opis:
-//  Funkcja odrysowywuje obraz przycisku w podanym po≥oøeniu. Potem oblicza
-//  gdzie ma odrysowaÊ napis i robi to.
+//  Funkcja odrysowywuje obraz przycisku w podanym po≈Ço≈ºeniu. Potem oblicza
+//  gdzie ma odrysowaƒá napis i robi to.
 void Button::Show(SDL_Surface* surface)
 {
 	SDL_Rect rect;
@@ -97,7 +97,7 @@ void Button::Show(SDL_Surface* surface)
 	SDL_Color textColor = { 0, 0, 0};
 	SDL_Surface* txt = TTF_RenderText_Blended(font, text.c_str(), textColor);
 
-	// Oblicza przesuniÍcie tekstu.
+	// Oblicza przesuniƒôcie tekstu.
 	int xOffset = (image->w - txt->w) / 2 + x;
 	int yOffset = (image->h - txt->h) / 2 + y;
 
@@ -108,6 +108,6 @@ void Button::Show(SDL_Surface* surface)
 
 	SDL_Flip(surface);
 
-	// Czy∂ci po tek∂cie.
+	// Czy≈õci po tek≈õcie.
 	SDL_FreeSurface(txt);
 }

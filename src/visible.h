@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 10.04.2010
-// Opis: Deklaracja klasy bazowej dla widocznych obiektÛw w grze.
+// Opis: Deklaracja klasy bazowej dla widocznych obiekt√≥w w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _VISIBLE_H_
@@ -21,7 +21,7 @@ public:
 	virtual void Show(int x, int y, SDL_Surface* surface);
 
 protected:
-	SDL_Surface* image; // Obraz do wy∂wietlenia.
+	SDL_Surface* image; // Obraz do wy≈õwietlenia.
 };
 
 #endif // _VISIBLE_H_ /////////////////////////////////////////////////////////

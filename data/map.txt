@@ -1,0 +1,50 @@
+51 29
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bgggggggggggggggggggggggggggggggggggggggggggggggggb
+bgbbbbbbgggbbbbbbgggbbbbgggbbggbbgbbbbbbbggbbgggggb
+bgbbbbbbbggbbbbbbggbbbbbbggbbgbbgbgbbbbbbggbbgggggb
+bgbbgggbbggbbggggggbbggbbggbbgbbgggbbggggggbbgggggb
+bgbbgggbbggbbggbgggbbggggbgbbkbbgggbbggggggbbgggggb
+bgbbbbbbgggbbbbgbgggbbbbggbbbbbggggbbbbggggbbgggggb
+bgbbbbbbpbbbbbbggbbggggbbggbbbbggggbbbbggggbbgggggb
+bgbbgggbbggbbggggggbbggbbggbbgbbgggbbggggggbbgggggb
+bgbbgggbbggbbbbbbggbbbbbbggbbggbbggbbbbbbbgbbbbbbgb
+bgbbgggbbggbbbbbbgggbbbggggbbggbbggbbbbbbgbbbbbbbgb
+bgggggggggggggggggggggggggggggggggggggggggggbgbgggb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbggbgbgggb
+bggggggggggggggggggggggggggggggggggggggggggggbggggb
+bgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbgggbbggbbggbgggggb
+bggggggggggggggggggggggggggggggggbgbgggbgggbgbggggb
+bbgbgbbbbbbbgbbbbgbbbggbbbbbbbbgggbgggbggggbggbgggb
+bgggbPROMHYLbOWNZbYOUbgggbggggbggggbgbggggggbggbggb
+bgbbgbbbbbbbgbbbbgbbbgbgbggggggbbbggbggggggbbgbgggb
+bggggggggggggggggggggbgggggbgggggggggbggggbgggggggb
+bbbgbbbbbbbbbbgggggggggbbgbbbggbgggbggbggbggbgggggb
+bggggbbbgbggggbgggbbgggggggggggbbgggbgggbrgbggggbgb
+bggbggbbbgbgggblbggggggggbbggbgggggbgbgggbbgbbgbgbb
+bgggbggbgggbgggbggggggggggggbgbggbbgbgbbgbbgggggggb
+bggggbggbggggggggbgggbgbgggbgggbbgtbgggbgggbbgggggb
+bggggggbsggggbggggbggggggggbggggggbgggggbgggcbggggb
+bggggggggggggggggggggggggbbggggggggggggbgbbbbgggggb
+bgggggbgggggggggbgggggggbeggggggggggggggggggggggggb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+Pierwsze dwie liczby to szerokość i wysokość mapy.
+Kolejne to symbole pól i przedmiotów.
+
+Pola (można po nich latać, z wyjątkiem krzaka):
+s - punkt, w którym gracz rozpoczyna grę
+g - trawa
+b - krzak
+e - wyjście
+
+Przedmioty (leżą na trawie):
+t - Gawith Apricot
+l - Leśny Dzban
+r - Rosołek
+k - Komputer
+p - Pies
+c - Kaktus
+
+Dodatkowo, jako przedmioty dostępne są litery:
+H, L, M, N, O, P, R, U, W, Y, Z.

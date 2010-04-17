@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Deklaracja klasy obs≥uguj±cej przyciski.
+// Opis: Deklaracja klasy obs≈ÇugujƒÖcej przyciski.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _BUTTON_H_
@@ -24,7 +24,7 @@ public:
 	void Show(SDL_Surface* surface);
 
 private:
-	int x, y; // Po≥oøenie buttona.
+	int x, y; // Po≈Ço≈ºenie buttona.
 	std::string text; // Tekst na buttonie.
 	TTF_Font* font; // Font buttona.
 };

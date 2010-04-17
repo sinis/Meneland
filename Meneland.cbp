@@ -55,10 +55,14 @@
 		<Unit filename="src/messagebox.h" />
 		<Unit filename="src/object.cpp" />
 		<Unit filename="src/object.h" />
+		<Unit filename="src/path.cpp" />
+		<Unit filename="src/path.h" />
 		<Unit filename="src/player.cpp" />
 		<Unit filename="src/player.h" />
 		<Unit filename="src/visible.cpp" />
 		<Unit filename="src/visible.h" />
+		<Unit filename="src/writer.cpp" />
+		<Unit filename="src/writer.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -2,36 +2,36 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 14.04.2010
-// Opis: Implementacja obs³ugi kamery.
+// Data modyfikacji: 17.04.2010
+// Opis: Implementacja obsÅ‚ugi kamery.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "camera.h"
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
-//  - _map: const Map* - wska¼nik na mapê.
-//  - _player: const Player* - wska¼nik na gracza.
+//  - _map: const Map* - wskaÅºnik na mapÄ™.
+//  - _player: const Player* - wskaÅºnik na gracza.
 //  - _surface: SDL_Surface* - powierzchnia gry.
 // Opis:
-//  Inicjalizuje wska¼niki wymagane do odrysowywania gry.
+//  Inicjalizuje wskaÅºniki wymagane do odrysowywania gry.
 Camera::Camera(Map* _map, Player* _player, SDL_Surface* _surface):
 	map(_map), player(_player), surface(_surface)
 {}
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Opis:
-//  Pobiera informacje o po³o¿eniu gracza, oblicza, które pola maj± zostaæ
-//  wy¶wietlone, wy¶wietla je i umieszcza na nich gracza.
+//  Pobiera informacje o poÅ‚oÅ¼eniu gracza, oblicza, ktÃ³re pola majÄ… zostaÄ‡
+//  wyÅ›wietlone, wyÅ›wietla je i umieszcza na nich gracza.
 void Camera::Show()
 {
-	// Standardowo funkcja ma obliczaæ pola do wy¶wietlenia tak, ¿eby gracz
-	// by³ na ¶rodku widocznej czê¶ci mapy.
-	// Je¶li gracz znajduje siê przy której¶ z krawêdzi mapy, funkcja powinna
-	// wy¶wietliæ tyle pól ile mo¿e, a gracza gdzie¶ na nich.
-	// Okno gry bêdzie w rozdzielczo¶ci 640x480 -> 16x12 pól.
-	// Gracz bêdzie odrysowywany na polu 8x6 (7x5).
-	// Wspó³rzêdne gracza powinny zostaæ wymno¿one przez 40, poniewa¿ wy¶wietla
+	// Standardowo funkcja ma obliczaÄ‡ pola do wyÅ›wietlenia tak, Å¼eby gracz
+	// byÅ‚ na Å›rodku widocznej czÄ™Å›ci mapy.
+	// JeÅ›li gracz znajduje siÄ™ przy ktÃ³rejÅ› z krawÄ™dzi mapy, funkcja powinna
+	// wyÅ›wietliÄ‡ tyle pÃ³l ile moÅ¼e, a gracza gdzieÅ› na nich.
+	// Okno gry bÄ™dzie w rozdzielczoÅ›ci 640x480 -> 16x12 pÃ³l.
+	// Gracz bÄ™dzie odrysowywany na polu 8x6 (7x5).
+	// WspÃ³Å‚rzÄ™dne gracza powinny zostaÄ‡ wymnoÅ¼one przez 40, poniewaÅ¼ wyÅ›wietla
 	// on tekstury wedle pikseli.
 
 	int playerX = player->GetX();
@@ -39,11 +39,11 @@ void Camera::Show()
 	int fromX;
 	int fromY;
 
-	// Je¶li mo¿na, pokazuje playera na ¶rodku mapy.
+	// JeÅ›li moÅ¼na, pokazuje playera na Å›rodku mapy.
 	/*if (playerX >= 7 && playerY >= 5 &&
 		playerX <= map->GetWidth() - 8 && playerY <= map->GetHeight() - 5)
 	{
-		// Oblicza pola do wy¶wietlenia.
+		// Oblicza pola do wyÅ›wietlenia.
 		fromX = playerX - 7;
 		fromY = playerY - 5;
 
@@ -51,7 +51,7 @@ void Camera::Show()
 		playerX = (fromX - playerX) * 40;
 		playerY = (fromY - playerY) * 40;
 
-	}*/ // Tego ifa trzeba rozbiæ.
+	}*/ // Tego ifa trzeba rozbiÄ‡.
 
 	// Standardowe ustawienia dla pozycji X w zakresie.
 	if (playerX >= 7 && playerX < map->GetWidth() - 8)
@@ -90,16 +90,26 @@ void Camera::Show()
 		playerY = (playerY - fromY) * 40;
 	}
 
-	// No ta... Nie wzi±³em pod uwagê sytuacji, gdy rozmiar mapy jest mniejszy ni¿
+	// No ta... Nie wziÄ…Å‚em pod uwagÄ™ sytuacji, gdy rozmiar mapy jest mniejszy niÅ¼
 	// 16x12.
 	int toX = fromX + 16, toY = fromY + 12;
 	if (toX >= map->GetWidth()) toX = map->GetWidth();
 	if (toY >= map->GetHeight()) toY = map->GetHeight();
+	if (fromX < 0)
+	{
+		fromX = 0;
+		playerX = player->GetX() * 40;
+	}
+	if (fromY < 0)
+	{
+		fromY = 0;
+		playerY = player->GetY() * 40;
+	}
 
-	// Przed wszystkim czy¶ci ekran.
+	// Przed wszystkim czyÅ›ci ekran.
 	SDL_FillRect(surface, &surface->clip_rect, SDL_MapRGB(surface->format, 0x00, 0x00, 0x00));
 
-	// Wy¶wietlenie wszystkiego wedle ustawieñ.
+	// WyÅ›wietlenie wszystkiego wedle ustawieÅ„.
 	map->Show(fromX, fromY, toX, toY, surface);
 	player->Show(playerX, playerY, surface);
 

@@ -2,8 +2,8 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 16.04.2010
-// Opis: Implementacja obs³ugi mapy.
+// Data modyfikacji: 17.04.2010
+// Opis: Implementacja obsÅ‚ugi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "map.h"
@@ -14,21 +14,21 @@
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametr:
-//  - playerX, playerY: int& - po³o¿enie gracza.
+//  - playerX, playerY: int& - poÅ‚oÅ¼enie gracza.
 // Opis:
-//  Inicjalizuje mapê.
+//  Inicjalizuje mapÄ™.
 //  1. Otwiera plik z danymi mapy.
 //  2. Pobiera z niego rozmiar mapy.
 //  3. Tworzy pola mapy.
-//  4. Pobiera dane pól mapy i kolejno je ustawia.
-//  5. Ustawia pozycjê gracza.
+//  4. Pobiera dane pÃ³l mapy i kolejno je ustawia.
+//  5. Ustawia pozycjÄ™ gracza.
 Map::Map(int& playerX, int& playerY)
 {
 	std::ifstream file((Path::GetCWD() + "/data/map.txt").c_str());
 	file >> w >> h;
 	file.ignore();
 
-	// Tworzy matrycê pól o rozmiarze mapy.
+	// Tworzy matrycÄ™ pÃ³l o rozmiarze mapy.
 	// map[x][y] (w = 4; h = 3)
 	// map -> x 0 1 2 3
 	//          v v v v
@@ -41,12 +41,12 @@ Map::Map(int& playerX, int& playerY)
 		map[i] = new Field[h];
 
 	char* buffer = new char[w+1];
-	// Pêtla pobieraj±ca dane z pliku
+	// PÄ™tla pobierajÄ…ca dane z pliku
 	for (int i = 0; i < h; i++)
 	{
 		file.getline(buffer, w+1);
 
-		// Pêtla ustawiaj±ca w³a¶ciwo¶ci pól.
+		// PÄ™tla ustawiajÄ…ca wÅ‚aÅ›ciwoÅ›ci pÃ³l.
 		for (int j = 0; j < w; j++)
 		{
 			FieldType fieldType;
@@ -62,6 +62,8 @@ Map::Map(int& playerX, int& playerY)
 				case (char) Lesny: fieldType = Grass; objectType = Lesny; break;
 				case (char) Rosolek: fieldType = Grass; objectType = Rosolek; break;
 				case (char) Komputer: fieldType = Grass; objectType = Komputer; break;
+				case (char) Pies: fieldType = Grass; objectType = Pies; break;
+				case (char) Kaktus: fieldType = Grass; objectType = Kaktus; break;
 				case (char) H: fieldType = Grass; objectType = H; break;
 				case (char) L: fieldType = Grass; objectType = L; break;
 				case (char) M: fieldType = Grass; objectType = M; break;
@@ -86,7 +88,7 @@ Map::Map(int& playerX, int& playerY)
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
-//  Czy¶ci pamiêæ po obiekcie - usuwa fieldy.
+//  CzyÅ›ci pamiÄ™Ä‡ po obiekcie - usuwa fieldy.
 Map::~Map()
 {
 	for (int i = 0; i < w; i++)
@@ -96,15 +98,15 @@ Map::~Map()
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Parametry:
-//  - fromX, fromY: int - wspó³rzêdne pola, od którego zacz±æ wy¶wietlanie
-//  - toX, toY: int - wspó³rzêdne pola, na którym zakoñczyæ wy¶wietlanie.
-//  - surface: SDL_Surface* - powierzchnia, na której wy¶wietliæ obraz.
+//  - fromX, fromY: int - wspÃ³Å‚rzÄ™dne pola, od ktÃ³rego zaczÄ…Ä‡ wyÅ›wietlanie
+//  - toX, toY: int - wspÃ³Å‚rzÄ™dne pola, na ktÃ³rym zakoÅ„czyÄ‡ wyÅ›wietlanie.
+//  - surface: SDL_Surface* - powierzchnia, na ktÃ³rej wyÅ›wietliÄ‡ obraz.
 // Opis:
-//  Funkcja wy¶wietla zakres pól na ekranie.
+//  Funkcja wyÅ›wietla zakres pÃ³l na ekranie.
 void Map::Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface)
 {
-	// Ka¿de pole ma wymiary 40x40px.
-	// Przesuniêcie ka¿dego pola x = (i - fromX) * 40
+	// KaÅ¼de pole ma wymiary 40x40px.
+	// PrzesuniÄ™cie kaÅ¼dego pola x = (i - fromX) * 40
 	//                           y = (j - fromY) * 40
 	int xOffset = 0;
 	int yOffset = 0;
@@ -123,17 +125,17 @@ void Map::Show(int fromX, int fromY, int toX, int toY, SDL_Surface* surface)
 
 // IsMovePossible /////////////////////////////////////////////////////////////
 // Parametry:
-//  - x, y: int - po³o¿enie gracza
-//  - dir: Direction - kierunek, w którym gracz chce siê udaæ.
+//  - x, y: int - poÅ‚oÅ¼enie gracza
+//  - dir: Direction - kierunek, w ktÃ³rym gracz chce siÄ™ udaÄ‡.
 // Opis:
-//  Na podstawie podanych parametrów funkcja sprawdza czy ruch gracza jest
-//  mo¿liwy do zrealizowania.
+//  Na podstawie podanych parametrÃ³w funkcja sprawdza czy ruch gracza jest
+//  moÅ¼liwy do zrealizowania.
 // Zwraca:
-//  - true - je¶li tak.
+//  - true - jeÅ›li tak.
 //  - false - w przeciwnym wypadku.
 bool Map::IsMovePossible(int x, int y, Direction dir)
 {
-	// Ruch jest mo¿liwy je¶li pole, na które gracz chce wej¶æ istnieje, oraz
+	// Ruch jest moÅ¼liwy jeÅ›li pole, na ktÃ³re gracz chce wejÅ›Ä‡ istnieje, oraz
 	// jest oznaczone jako available.
 
 	switch (dir)
@@ -156,19 +158,19 @@ bool Map::IsMovePossible(int x, int y, Direction dir)
 			break;
 	}
 
-	// Je¶li wykonanie dosz³o tutaj - ruch jest mo¿liwy je¶li pole docelowe
+	// JeÅ›li wykonanie doszÅ‚o tutaj - ruch jest moÅ¼liwy jeÅ›li pole docelowe
 	// jest oznaczone jako available.
 	return map[x][y].IsAvailable();
 }
 
 // MoveHandling ///////////////////////////////////////////////////////////////
 // Parametry:
-//  - x, y: int - po³o¿enie gracza.
+//  - x, y: int - poÅ‚oÅ¼enie gracza.
 //  - surface: SDL_Surface* - powierzchnia przekazywana do obiektu.
 // Opis:
-//  Funkcja przekazuje wykonanie do funkcji obs³ugi pola.
+//  Funkcja przekazuje wykonanie do funkcji obsÅ‚ugi pola.
 // Zwraca:
-//  - Exit - je¶li gracz wszed³ na pole wyj¶cia.
+//  - Exit - jeÅ›li gracz wszedÅ‚ na pole wyjÅ›cia.
 //  - NoneField - w innym wypadku.
 FieldType Map::MoveHandling(int x, int y, SDL_Surface* surface)
 {

@@ -2,8 +2,8 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 16.04.2010
-// Opis: Implementacja obiektów wystêpuj±cych w grze.
+// Data modyfikacji: 17.04.2010
+// Opis: Implementacja obiektÃ³w wystÄ™pujÄ…cych w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "object.h"
@@ -41,7 +41,7 @@ void Object::SetObjectType(ObjectType _type)
 	if (objectImage) SDL_FreeSurface(objectImage);
 	if (image) SDL_FreeSurface(image);
 
-	// W zale¿no¶ci od typu obiekt ma dobierany odpowiedni opis, obraz i miniaturê.
+	// W zaleÅ¼noÅ›ci od typu obiekt ma dobierany odpowiedni opis, obraz i miniaturÄ™.
 	std::string sImage = Path::GetCWD() + "/data/";
 	std::string sThumb = Path::GetCWD() + "/data/";
 
@@ -50,47 +50,60 @@ void Object::SetObjectType(ObjectType _type)
 		case Gawith:
 			sImage += "gawith.png";
 			sThumb += "gawith-min.png";
-			description = "Znalaz³e¶ tabakê... U¿ywkê czêsto spotykan±\n"
-						  "w ró¿norakich ¶rodowiskach, od m³odzie¿owych,\n"
-						  "przez kopalniê, a¿ po koneserów. Dla jednych\n"
-						  " jest okazj± do manifestowania swojej\n"
-						  "(nie)dojrza³o¶ci, dla drugich po prostu\n"
-						  "konieczna, a dla trzecich, bo j± lubi±.\n"
-						  "Czêsto w ¿yciu spotykaj± Ciê chwile\n"
-						  "zadumy, chwile, w których chcesz siê\n"
-						  "odci±æ na od wszystkiego, chwile s³abo¶ci.\n"
-						  "Odpowiednio za¿yta tabaka mo¿e Ci te chwile\n"
-						  "os³odziæ. W osamotnieniu daæ u¶miech.\n"
-						  "W s³abo¶ci Azyl.\n"
-						  "W zadumie \"¶wie¿o¶æ\" umys³u.";
+			description = "ZnalazÅ‚eÅ› tabakÄ™... UÅ¼ywkÄ™ czÄ™sto spotykanÄ…\n"
+						  "w rÃ³Å¼norakich Å›rodowiskach, od mÅ‚odzieÅ¼owych,\n"
+						  "przez kopalniÄ™, aÅ¼ po koneserÃ³w. Dla jednych\n"
+						  " jest okazjÄ… do manifestowania swojej\n"
+						  "(nie)dojrzaÅ‚oÅ›ci, dla drugich po prostu\n"
+						  "konieczna, a dla trzecich, bo jÄ… lubiÄ….\n"
+						  "CzÄ™sto w Å¼yciu spotykajÄ… CiÄ™ chwile\n"
+						  "zadumy, chwile, w ktÃ³rych chcesz siÄ™\n"
+						  "odciÄ…Ä‡ na od wszystkiego, chwile sÅ‚aboÅ›ci.\n"
+						  "Odpowiednio zaÅ¼yta tabaka moÅ¼e Ci te chwile\n"
+						  "osÅ‚odziÄ‡. W osamotnieniu daÄ‡ uÅ›miech.\n"
+						  "W sÅ‚aboÅ›ci Azyl.\n"
+						  "W zadumie \"Å›wieÅ¼oÅ›Ä‡\" umysÅ‚u.";
 			break;
 		case Lesny:
 			sImage += "lesny.png";
 			sThumb += "lesny-min.png";
-			description = "O, patrz, znalaz³e¶ Le¶ny Dzban. Wytwór\n"
-						  "winopodobny, znany równie¿ pod nazw± \"jabol\".\n"
-						  "Zawarto¶æ siarki umo¿liwia jego picie,\n"
-						  " a jednak jeste¶ twardy i pijesz. Dlaczego?\n"
-						  "Mo¿e ze wzglêdu na jego wyj±tkowo¶æ. A mo¿e\n"
-						  "po prostu ¿al Ci wydanych pieniêdzy.\n"
-						  "Tak czy inaczej Le¶ny spity w ³adny dzieñ\n"
-						  "na ³±ce dodaje ¿yciu kolorów.";
+			description = "O, patrz, znalazÅ‚eÅ› LeÅ›ny Dzban. WytwÃ³r\n"
+						  "winopodobny, znany rÃ³wnieÅ¼ pod nazwÄ… \"jabol\".\n"
+						  "ZawartoÅ›Ä‡ siarki umoÅ¼liwia jego picie,\n"
+						  " a jednak jesteÅ› twardy i pijesz. Dlaczego?\n"
+						  "MoÅ¼e ze wzglÄ™du na jego wyjÄ…tkowoÅ›Ä‡. A moÅ¼e\n"
+						  "po prostu Å¼al Ci wydanych pieniÄ™dzy.\n"
+						  "Tak czy inaczej LeÅ›ny spity w Å‚adny dzieÅ„\n"
+						  "na Å‚Ä…ce dodaje Å¼yciu kolorÃ³w.";
 			break;
 		case Rosolek:
 			sImage += "rosolek.png";
 			sThumb += "rosolek-min.png";
-			description = "Rosó³. Potrawa jedzona zwykle podczas niedzielnych\n"
-						  "obiadów. Jednym smakuje bardziej, drugim mniej.\n"
-						  "Tak czy inaczej ¶wietnie rozgrzewa.\n"
-						  "Jednak uwa¿aj. Z mag± mo¿na przesadziæ.\n"
-						  "\"Leo¶, wpierdalaj roso³ek.\"";
+			description = "RosÃ³Å‚. Potrawa jedzona zwykle podczas niedzielnych\n"
+						  "obiadÃ³w. Jednym smakuje bardziej, drugim mniej.\n"
+						  "Tak czy inaczej Å›wietnie rozgrzewa.\n"
+						  "Jednak uwaÅ¼aj. Z magÄ… moÅ¼na przesadziÄ‡.\n"
+						  "\"LeoÅ›, wpierdalaj rosoÅ‚ek.\"";
 			break;
 		case Komputer:
 			sImage += "komputer.png";
 			sThumb += "komputer-min.png";
-			description = "Znalaz³e¶ komputer. Teraz mo¿esz poszukaæ\n"
-						  "kolegów w internecie. Kto wie? Mo¿e znajd±\n"
-						  "siê jacy¶ menele w okolicy...";
+			description = "ZnalazÅ‚eÅ› komputer. Teraz moÅ¼esz poszukaÄ‡\n"
+						  "kolegÃ³w w internecie. Kto wie? MoÅ¼e znajdÄ…\n"
+						  "siÄ™ jacyÅ› menele w okolicy...";
+			break;
+		case Pies:
+			sImage += "pies.png";
+			sThumb += "pies-min.png";
+			description = "A oto prawdziwy przyjaciel. Potrafi\n"
+						  "kochaÄ‡ bez wzglÄ™du na wszystko.\n"
+						  "To do szczÄ™Å›cia wystarczy.";
+			break;
+		case Kaktus:
+			sImage += "kaktus.png";
+			sThumb += "kaktus-min.png";
+			description = "\"ZabiÅ‚eÅ› go...\"\n  \n"
+						  "\"Patrzcie! On ma czapeczkÄ™!\"";
 			break;
 		// Literki
 		case H:
@@ -138,7 +151,7 @@ void Object::SetObjectType(ObjectType _type)
 			sImage = "";
 			break;
 		case NoneObject:
-			break; // ¯eby kompilator nie krzycza³.
+			break; // Å»eby kompilator nie krzyczaÅ‚.
 		default:
 			type = NoneObject;
 			return;
@@ -152,11 +165,11 @@ void Object::SetObjectType(ObjectType _type)
 
 // Handling ///////////////////////////////////////////////////////////////////
 // Parametr:
-//  - surface: SDL_Surface* - powierzchnia, na której odrysowany bêdzie
+//  - surface: SDL_Surface* - powierzchnia, na ktÃ³rej odrysowany bÄ™dzie
 //   MessageBox.
 // Opis:
 //  Funkcja odpowiada za zdarzenie gdy gracz wejdzie na podany obiekt.
-//  Wy¶wietla komunikat z opisem i obrazem obiektu.
+//  WyÅ›wietla komunikat z opisem i obrazem obiektu.
 void Object::Handling(SDL_Surface* surface)
 {
 	if (description.empty())

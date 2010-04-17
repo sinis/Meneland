@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 5.04.2010
-// Opis: Implementacja klasy bazowej dla widocznych obiektów.
+// Opis: Implementacja klasy bazowej dla widocznych obiektÃ³w.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "visible.h"
@@ -11,7 +11,7 @@
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Opis:
-//  Inicjalizuje obiekt. Je¶li podano nazwê pliku - próbuje za³adowaæ obraz.
+//  Inicjalizuje obiekt. JeÅ›li podano nazwÄ™ pliku - prÃ³buje zaÅ‚adowaÄ‡ obraz.
 Visible::Visible(const char* fileName):
 	image(0)
 {
@@ -23,7 +23,7 @@ Visible::Visible(const char* fileName):
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
-//  Czy¶ci po obiekcie. Je¶li utworzono wcze¶niej w pamiêci obraz - usuwa go.
+//  CzyÅ›ci po obiekcie. JeÅ›li utworzono wczeÅ›niej w pamiÄ™ci obraz - usuwa go.
 Visible::~Visible()
 {
 	if (image)
@@ -34,9 +34,9 @@ Visible::~Visible()
 // Parametr:
 //  - fileName: const char* - nazwa pliku z obrazem.
 // Opis:
-//  Funkcja ustawia obraz obiektu. Je¶li obraz wcze¶niej istnia³ - usuwa go.
+//  Funkcja ustawia obraz obiektu. JeÅ›li obraz wczeÅ›niej istniaÅ‚ - usuwa go.
 // Zwraca:
-//  - true - je¶li uda³o siê za³adowaæ obraz
+//  - true - jeÅ›li udaÅ‚o siÄ™ zaÅ‚adowaÄ‡ obraz
 //  - false - w razie niepowodzenia.
 bool Visible::SetImage(const char* fileName)
 {
@@ -56,10 +56,10 @@ bool Visible::SetImage(const char* fileName)
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Parametry:
-//  - x, y: integer - wspó³rzêdne
+//  - x, y: integer - wspÃ³Å‚rzÄ™dne
 //  - surface: SDL_Surface - powierzchnia
 // Opis:
-//  Funkcja wy¶wietla obraz na podanej powierzchni.
+//  Funkcja wyÅ›wietla obraz na podanej powierzchni.
 void Visible::Show(int x, int y, SDL_Surface* surface)
 {
 	SDL_Rect rect;

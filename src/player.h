@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Deklaracja klasy odpowiedzialnej za obs³ugê playera.
+// Opis: Deklaracja klasy odpowiedzialnej za obsÅ‚ugÄ™ playera.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _PLAYER_H_
@@ -30,7 +30,7 @@ public:
 private:
 	void ChangeTexture(Direction _dir);
 
-	int x, y; // Wspó³rzêdne gracza.
+	int x, y; // WspÃ³Å‚rzÄ™dne gracza.
 	Direction dir; // Ustawienie gracza.
 	SDL_Surface* textures[4]; // Jego tekstury.
 	Map* map;

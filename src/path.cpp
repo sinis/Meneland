@@ -3,8 +3,8 @@
 // Autor: Sinis
 // Data utworzenia: 16.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Plik zawiera implementacjê klasy odpowiedzialnej za obs³ugê ¶cie¿ki
-//  dostêpu do folderu roboczego.
+// Opis: Plik zawiera implementacjÄ™ klasy odpowiedzialnej za obsÅ‚ugÄ™ Å›cieÅ¼ki
+//  dostÄ™pu do folderu roboczego.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "path.h"
@@ -18,9 +18,9 @@
 
 // GetCWD /////////////////////////////////////////////////////////////////////
 // Opis:
-//  Funkcja ustala ¶cie¿kê do aktualnego folderu roboczego i zwraca j±.
+//  Funkcja ustala Å›cieÅ¼kÄ™ do aktualnego folderu roboczego i zwraca jÄ….
 // Zwraca:
-//  std::string - ¶cie¿ka do folderu roboczego.
+//  std::string - Å›cieÅ¼ka do folderu roboczego.
 std::string Path::GetCWD()
 {
 	char cwd[256];

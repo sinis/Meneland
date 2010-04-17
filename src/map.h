@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 13.04.2010
-// Opis: Deklaracja klasy obs³uguj±cej mapê.
+// Opis: Deklaracja klasy obsÅ‚ugujÄ…cej mapÄ™.
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef _MAP_H_
@@ -28,7 +28,7 @@ public:
 
 private:
 	int w, h; // Rozmiar mapy.
-	Field** map; // Mapa zbudowana z pól.
+	Field** map; // Mapa zbudowana z pÃ³l.
 };
 
 #endif // _MAP_H_ /////////////////////////////////////////////////////////////

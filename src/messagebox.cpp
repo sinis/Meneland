@@ -3,7 +3,7 @@
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
 // Data modyfikacji: 16.04.2010
-// Opis: Implementacja komunikatÛw.
+// Opis: Implementacja komunikat√≥w.
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "messagebox.h"
@@ -14,8 +14,8 @@
 
 // Konstruktor ////////////////////////////////////////////////////////////////
 // Parametry:
-//  - _text: std::string& - referencja na tekst do wy∂wietlenia.
-//  - _objectImage: SDL_Surface* - wskaºnik na powierzchniÍ z obrazem obiektu.
+//  - _text: std::string& - referencja na tekst do wy≈õwietlenia.
+//  - _objectImage: SDL_Surface* - wska≈∫nik na powierzchniƒô z obrazem obiektu.
 // Opis:
 //  Inicjalizuje obiekt, oraz czcionki.
 MessageBox::MessageBox(std::string& _text, SDL_Surface* _objectImage):
@@ -27,7 +27,7 @@ MessageBox::MessageBox(std::string& _text, SDL_Surface* _objectImage):
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
-//  Usuwa buttona i zamyka czcionkÍ.
+//  Usuwa buttona i zamyka czcionkƒô.
 MessageBox::~MessageBox()
 {
 	delete button;
@@ -36,15 +36,15 @@ MessageBox::~MessageBox()
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Parametr:
-//  - surface: SDL_Surface* - powierzchnia, na ktÛrej wy∂wietlony ma byÊ
+//  - surface: SDL_Surface* - powierzchnia, na kt√≥rej wy≈õwietlony ma byƒá
 //   komunikat.
 // Opis:
-//  Funkcja wy∂wietla komunikat oraz przekazuje obs≥ugÍ do buttona.
+//  Funkcja wy≈õwietla komunikat oraz przekazuje obs≈Çugƒô do buttona.
 void MessageBox::Show(SDL_Surface* surface)
 {
-	// Wy∂wietla komunikat w zaleøno∂ci od tego czy zosta≥ okre∂lony obraz
-	// obiektu. Je∂li tak: wy∂wietla go po lewej, a tekst po jego prawej.
-	// Je∂li nie - wy∂wietla tekst na ∂rodku.
+	// Wy≈õwietla komunikat w zale≈ºno≈õci od tego czy zosta≈Ç okre≈õlony obraz
+	// obiektu. Je≈õli tak: wy≈õwietla go po lewej, a tekst po jego prawej.
+	// Je≈õli nie - wy≈õwietla tekst na ≈õrodku.
 
 	SDL_Rect rect; // Zmienna pomocnicza - do odrysowywania.
 	//SDL_Color fg = {0, 0, 0};
@@ -70,7 +70,7 @@ void MessageBox::Show(SDL_Surface* surface)
 	}
 	else
 	{
-		// Odrysowywuje tekst na ∂rodku.
+		// Odrysowywuje tekst na ≈õrodku.
 		rect.x = paperX + 10; //(surface->w - txt->w) / 2;
 		rect.y = paperY + 10; //(surface->h - txt->h) / 2;
 		//SDL_BlitSurface(txt, 0, surface, &rect);
@@ -86,12 +86,12 @@ void MessageBox::Show(SDL_Surface* surface)
 
 // Show ///////////////////////////////////////////////////////////////////////
 // Parametry:
-//  - _text: std::string& - tekst do wy∂wietlenia.
-//  - _objectImage: SDL_Surface* - wskaºnik na obraz obiektu.
-//  - surface: SDL_Surface* - wskaºnik na powierzchniÍ.
+//  - _text: std::string& - tekst do wy≈õwietlenia.
+//  - _objectImage: SDL_Surface* - wska≈∫nik na obraz obiektu.
+//  - surface: SDL_Surface* - wska≈∫nik na powierzchniƒô.
 // Opis:
 //  Jako statyczna funkcja tworzy nowy obiekt MessageBoxa wedle podanych
-//  parametrÛw. Wy∂wietla go i przekazuje obs≥ugÍ i na koÒcu czy∂ci po nim.
+//  parametr√≥w. Wy≈õwietla go i przekazuje obs≈Çugƒô i na ko≈Ñcu czy≈õci po nim.
 void MessageBox::Show(std::string& _text, SDL_Surface* _objectImage, SDL_Surface* surface)
 {
 	MessageBox* mb = new MessageBox(_text, _objectImage);

@@ -20,14 +20,14 @@ public:
 	Object(ObjectType _type);
 	virtual ~Object();
 
-	void Handling(SDL_Surface* surface); // Obs≥uga objectu.
+	void Handling(SDL_Surface* surface); // Obs≈Çuga objectu.
 
 	void SetObjectType(ObjectType _type);
 	ObjectType GetObjectType() const { return type; }
 
 private:
 	ObjectType type;
-	std::string description; // Opis obiektu ustawiany w zaleøno∂ci od jego typu.
+	std::string description; // Opis obiektu ustawiany w zale≈ºno≈õci od jego typu.
 	SDL_Surface* objectImage; // Obraz obiektu.
 };
 
