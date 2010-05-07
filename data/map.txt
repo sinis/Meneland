@@ -1,32 +1,32 @@
 51 29
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bgggggggggggggggggggggggggggggggggggggggggggggggggb
-bgbbbbbbgggbbbbbbgggbbbbgggbbggbbgbbbbbbbggbbgggggb
-bgbbbbbbbggbbbbbbggbbbbbbggbbgbbgbgbbbbbbggbbgggggb
-bgbbgggbbggbbggggggbbggbbggbbgbbgggbbggggggbbgggggb
-bgbbgggbbggbbggbgggbbggggbgbbkbbgggbbggggggbbgggggb
-bgbbbbbbgggbbbbgbgggbbbbggbbbbbggggbbbbggggbbgggggb
-bgbbbbbbpbbbbbbggbbggggbbggbbbbggggbbbbggggbbgggggb
-bgbbgggbbggbbggggggbbggbbggbbgbbgggbbggggggbbgggggb
-bgbbgggbbggbbbbbbggbbbbbbggbbggbbggbbbbbbbgbbbbbbgb
-bgbbgggbbggbbbbbbgggbbbggggbbggbbggbbbbbbgbbbbbbbgb
-bgggggggggggggggggggggggggggggggggggggggggggbgbgggb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbggbgbgggb
-bggggggggggggggggggggggggggggggggggggggggggggbggggb
-bgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbgggbbggbbggbgggggb
-bggggggggggggggggggggggggggggggggbgbgggbgggbgbggggb
-bbgbgbbbbbbbgbbbbgbbbggbbbbbbbbgggbgggbggggbggbgggb
-bgggbPROMHYLbOWNZbYOUbgggbggggbggggbgbggggggbggbggb
-bgbbgbbbbbbbgbbbbgbbbgbgbggggggbbbggbggggggbbgbgggb
-bggggggggggggggggggggbgggggbgggggggggbggggbgggggggb
-bbbgbbbbbbbbbbgggggggggbbgbbbggbgggbggbggbggbgggggb
-bggggbbbgbggggbgggbbgggggggggggbbgggbgggbrgbggggbgb
-bggbggbbbgbgggblbggggggggbbggbgggggbgbgggbbgbbgbgbb
-bgggbggbgggbgggbggggggggggggbgbggbbgbgbbgbbgggggggb
-bggggbggbggggggggbgggbgbgggbgggbbgtbgggbgggbbgggggb
-bggggggbsggggbggggbggggggggbggggggbgggggbgggcbggggb
-bggggggggggggggggggggggggbbggggggggggggbgbbbbgggggb
-bgggggbgggggggggbgggggggbeggggggggggggggggggggggggb
+b                                                 b
+b bbbbbb   bbbbbb   bbbb   bb  bb bbbbbbb  bb     b
+b bbbbbbb  bbbbbb  bbbbbb  bb bb b bbbbbb  bb     b
+b bb   bb  bb      bb  bb  bb bb   bb      bb     b
+b bb   bb  bb  b   bb    b bbkbb   bb      bb     b
+b bbbbbb   bbbb b   bbbb  bbbbb    bbbb    bb     b
+b bbbbbbpbbbbbb  bb    bb  bbbb    bbbb    bb     b
+b bb   bb  bb      bb  bb  bb bb   bb      bb     b
+b bb   bb  bbbbbb  bbbbbb  bb  bb  bbbbbbb bbbbbb b
+b bb   bb  bbbbbb   bbb    bb  bb  bbbbbb bbbbbbb b
+b                                           b b   b
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb  b b   b
+b                                            b    b
+b bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb   bb  bb  b     b
+b                                b b   b   b b    b
+bb b bbbbbbb bbbb bbb  bbbbbbbb   b   b    b  b   b
+b   bPROMHYLbOWNZbYOUb   b    b    b b      b  b  b
+b bb bbbbbbb bbbb bbb b b      bbb  b      bb b   b
+b                    b     b         b    b       b
+bbb bbbbbbbbbb         bb bbb  b   b  b  b  b     b
+b    bbb b    b   bb           bb   b   br b    b b
+b  b  bbb b   blb        bb  b     b b   bb bb b bb
+b   b  b   b   b            b b  bb b bb bb       b
+b    b  b        b   b b   b   bb tb   b   bb     b
+b      bs    b    b        b      b     b   cb    b
+b                        bb            b bbbb     b
+b     b         bamjfi  be                        b
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 Pierwsze dwie liczby to szerokość i wysokość mapy.
@@ -45,6 +45,11 @@ r - Rosołek
 k - Komputer
 p - Pies
 c - Kaktus
+a - Tymbark arbuzowy
+m - Mandarynka
+j - Sok pomarańczowy
+f - Fiat 126p
+i - Ibanez JS
 
 Dodatkowo, jako przedmioty dostępne są litery:
 H, L, M, N, O, P, R, U, W, Y, Z.

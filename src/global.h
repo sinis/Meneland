@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 9.04.2010
-// Data modyfikacji: 17.04.2010
+// Data modyfikacji: 7.05.2010
 // Opis: Plik zawiera globalne symbole dla klas.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +21,7 @@ enum FieldType // Typ pola mapy.
 {
 	NoneField,
 	Start = 's',
-	Grass = 'g',
+	Grass = ' ',
 	Bush = 'b',
 	Exit = 'e'
 };
@@ -35,6 +35,11 @@ enum ObjectType // Typ obiektu.
 	Komputer = 'k',
 	Pies = 'p',
 	Kaktus = 'c',
+	Tymbark = 'a',
+	Mandarynka = 'm',
+	Soczek = 'j',
+	Maluch = 'f',
+	Ibanez = 'i',
 	H = 'H', L = 'L', M = 'M', N = 'N', O = 'O', P = 'P', R = 'R',
 	U = 'U', W = 'W', Y = 'Y', Z = 'Z' // PROMHYLOWNZYOU
 };

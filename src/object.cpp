@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 17.04.2010
+// Data modyfikacji: 7.05.2010
 // Opis: Implementacja obiektów występujących w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -104,6 +104,38 @@ void Object::SetObjectType(ObjectType _type)
 			sThumb += "kaktus-min.png";
 			description = "\"Zabiłeś go...\"\n  \n"
 						  "\"Patrzcie! On ma czapeczkę!\"";
+			break;
+        case Tymbark:
+            sImage += "tymbark.png";
+            sThumb += "tymbark-min.png";
+            description = "Lolwtf?!\n"
+                          "\n  \n\"Twoje zdrowie!\"";
+            break;
+        case Mandarynka:
+            sImage += "mandarynka.png";
+            sThumb += "mandarynka-min.png";
+            description = "\"Będzie miał czapeczkę...\"";
+            break;
+		case Soczek:
+			sImage += "sok.png";
+			sThumb += "sok-min.png";
+			description = "Soczek jest zarombisty. Słodki\n"
+						  "ale zarombisty.\n  \n"
+						  "\"Chcesz?\"\n"
+						  "\"Nie.\"\n"
+						  "\"Albo daj.\"";
+			break;
+        case Maluch:
+            sImage += "maluch.png";
+            sThumb += "maluch-min.png";
+            description = "Ach te czasy dzieciństwa...";
+            break;
+		case Ibanez:
+			sImage += "ibanez.png";
+			sThumb += "ibanez-min.png";
+			description = "*brzdęk, brzdęk, brzdęk...*\n"
+						  "\"Nikt jeszcze nie wie czy stare słońce\n"
+						  "zarysuje nowy dzień...\"";
 			break;
 		// Literki
 		case H:

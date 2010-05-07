@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 17.04.2010
+// Data modyfikacji: 7.05.2010
 // Opis: Implementacja obsługi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +64,11 @@ Map::Map(int& playerX, int& playerY)
 				case (char) Komputer: fieldType = Grass; objectType = Komputer; break;
 				case (char) Pies: fieldType = Grass; objectType = Pies; break;
 				case (char) Kaktus: fieldType = Grass; objectType = Kaktus; break;
+				case (char) Tymbark: fieldType = Grass; objectType = Tymbark; break;
+				case (char) Mandarynka: fieldType = Grass; objectType = Mandarynka; break;
+				case (char) Soczek: fieldType = Grass; objectType = Soczek; break;
+				case (char) Maluch: fieldType = Grass; objectType = Maluch; break;
+				case (char) Ibanez: fieldType = Grass; objectType = Ibanez; break;
 				case (char) H: fieldType = Grass; objectType = H; break;
 				case (char) L: fieldType = Grass; objectType = L; break;
 				case (char) M: fieldType = Grass; objectType = M; break;
