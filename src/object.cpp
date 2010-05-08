@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 7.05.2010
+// Data modyfikacji: 8.05.2010
 // Opis: Implementacja obiektów występujących w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -55,7 +55,7 @@ void Object::SetObjectType(ObjectType _type)
 						  "przez kopalnię, aż po koneserów. Dla jednych\n"
 						  " jest okazją do manifestowania swojej\n"
 						  "(nie)dojrzałości, dla drugich po prostu\n"
-						  "konieczna, a dla trzecich, bo ją lubią.\n"
+						  "konieczna, a dla trzecich, bo ją lubią.\n  \n"
 						  "Często w życiu spotykają Cię chwile\n"
 						  "zadumy, chwile, w których chcesz się\n"
 						  "odciąć na od wszystkiego, chwile słabości.\n"

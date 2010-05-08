@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 9.04.2010
-// Data modyfikacji: 7.05.2010
+// Data modyfikacji: 8.05.2010
 // Opis: Plik zawiera globalne symbole dla klas.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -44,6 +44,13 @@ enum ObjectType // Typ obiektu.
 	U = 'U', W = 'W', Y = 'Y', Z = 'Z' // PROMHYLOWNZYOU
 };
 
+enum Color // Kolor dla Writera.
+{
+	White,
+	Black
+};
+
 Uint32 getpixel(SDL_Surface *surface, int x, int y);
+void Wait(Uint32 time);
 
 #endif // _GLOBAL_H_ //////////////////////////////////////////////////////////

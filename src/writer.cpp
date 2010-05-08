@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 16.04.2010
-// Data modyfikacji: 17.04.2010
+// Data modyfikacji: 8.05.2010
 // Opis: Plik zawiera implementację klasy odpowiedzialnej za wypisywanie
 //  tekstu.
 ///////////////////////////////////////////////////////////////////////////////
@@ -16,12 +16,15 @@
 //  - _text: std::string& - referencja do tekstu, który należy wypisać.
 //  - _x, _y: int - współrzędne gdzie wyświetlić tekst.
 //  - _surface: SDL_Surface* - powierzchnia, na której będzie odrysowany tekst.
+//  - _align: Align - wyrównanie tekstu.
+//  - size: int - rozmiar czcionki.
+//  - _color: SDL_Color - kolor czcionki.
 // Opis:
 //  Inicjalizuje obiekt.
-Writer::Writer(std::string& _text, int _x, int _y, SDL_Surface* _surface):
-	text(_text), x(_x), y(_y), surface(_surface)
+Writer::Writer(std::string& _text, int _x, int _y, SDL_Surface* _surface, Align _align, int size, SDL_Color _color):
+	text(_text), x(_x), y(_y), surface(_surface), align(_align), color(_color)
 {
-	font = TTF_OpenFont((Path::GetCWD() + "/data/font.ttf").c_str(), 15);
+	font = TTF_OpenFont((Path::GetCWD() + "/data/font.ttf").c_str(), size);
 }
 
 // Desturktor /////////////////////////////////////////////////////////////////
@@ -71,8 +74,15 @@ void Writer::Write()
 	// Pętla kolejno odrysowująca linie na ekranie.
 	for (int i = 0; i < linesCount; i++)
 	{
-		lineSurface = TTF_RenderUTF8_Blended(font, linesVector.at(i).c_str(), {0, 0, 0});
-		rect.x = x;
+		lineSurface = TTF_RenderUTF8_Blended(font, linesVector.at(i).c_str(), color);
+		if (align == LeftAlign)
+		{
+			rect.x = x;
+		}
+		else if (align == Center)
+		{
+			rect.x = (surface->w - lineSurface->w) / 2;
+		}
 		rect.y = y;
 		SDL_BlitSurface(lineSurface, 0, surface, &rect);
 		y += lineSurface->h; // Przesuwa następną linię pod aktualną.
@@ -86,13 +96,19 @@ void Writer::Write()
 //  - x, y: int - wskółrzędne, gdzie wyświetlić tekst.
 //  - surface: SDL_Surface* - powierzchnia, na której tekst ma zostać
 //    wyświetlony.
+//  - align: Align - wyrównanie tekstu.
+//  - size: int - rozmiar tekstu.
+//  - color: SDL_Color - kolor tekstu.
 // Opis:
 //  Jest to metoda statyczna. Tworzy nowy obiekt Writera o podanych parametrach
 //  i przekazuje mu wykonanie w celu odrysowania tekstu. Po wszystkim czyści
 //  pamięć.
-void Writer::Write(std::string& text, int x, int y, SDL_Surface* surface)
+void Writer::Write(std::string& text, int x, int y, SDL_Surface* surface, Align align, int size, Color color)
 {
-	Writer* writer = new Writer(text, x, y, surface);
+	SDL_Color col;
+	if (color == White) col = {255, 255, 255};
+	else if (color == Black) col = {0, 0, 0};
+	Writer* writer = new Writer(text, x, y, surface, align, size, col);
 	writer->Write();
 	delete writer;
 }

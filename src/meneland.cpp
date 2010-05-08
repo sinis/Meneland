@@ -12,6 +12,7 @@
 #include "map.h"
 #include "player.h"
 #include "camera.h"
+#include "intro.h"
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
@@ -52,6 +53,9 @@ bool Meneland::Init()
 //  - -1 - jeśli błąd.
 int Meneland::Execute()
 {
+	// No dobra, ale najpierw intro.
+	Intro::Show(screen);
+
 	// Na początku tworzy Mapę, Playera i Camerę. Ustawia playerowi miejsce
 	// na planszy i przechodzi do głównej pętli.
 	int playerX, playerY;
@@ -63,6 +67,8 @@ int Meneland::Execute()
 	Map* map = new Map(playerX, playerY);
 	Player* player = new Player(playerX, playerY, map);
 	Camera* camera = new Camera(map, player, screen);
+	const int fps = 10;
+	int startTicks = 0;
 
 	camera->Show();
 	// Główna pętla.
@@ -70,6 +76,7 @@ int Meneland::Execute()
 	// gdy gracz wejdzie na pole wyjścia.
 	while (!quit)
 	{
+		startTicks = SDL_GetTicks();
 		// Ruch
 		/*if (keystate[SDLK_UP])
 			player->Move(Up);
@@ -106,8 +113,8 @@ int Meneland::Execute()
 		if (map->MoveHandling(player->GetX(), player->GetY(), screen) == Exit)
 			quit = true;
 
-		SDL_PumpEvents();
-		SDL_Delay(90);
+		if (SDL_GetTicks() - startTicks < 1000 / fps)
+			SDL_Delay(1000/fps - (SDL_GetTicks() - startTicks));
 	}
 
 	return 0;

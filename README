@@ -3,6 +3,13 @@
 // Author: Sinis (m.siniss@gmail.com)
 // License: GPLv3
 // Created: 5.04.2010
+// Modified: 8.05.2010
 ///////////////////////////////////////////////////////////////////////////////
 
-Meneland is game-like application that uses SDL. 
+Meneland is game-like application that uses SDL. It was written only for educational purposes, just to test myself ;)
+
+If you want to compile it you will need:
+- SDL
+- SDL_image
+- SDL_ttf
+If you already have, just hit "Compile" in C::B.
