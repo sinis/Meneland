@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 8.05.2010
+// Data modyfikacji: 9.05.2010
 // Opis: Implementacja obiektów występujących w grze.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -109,7 +109,7 @@ void Object::SetObjectType(ObjectType _type)
             sImage += "tymbark.png";
             sThumb += "tymbark-min.png";
             description = "Lolwtf?!\n"
-                          "\n  \n\"Twoje zdrowie!\"";
+                          "  \n  \n\"Twoje zdrowie!\"";
             break;
         case Mandarynka:
             sImage += "mandarynka.png";

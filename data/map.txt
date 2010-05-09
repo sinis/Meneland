@@ -1,33 +1,47 @@
-51 29
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-b                                                 b
-b bbbbbb   bbbbbb   bbbb   bb  bb bbbbbbb  bb     b
-b bbbbbbb  bbbbbb  bbbbbb  bb bb b bbbbbb  bb     b
-b bb   bb  bb      bb  bb  bb bb   bb      bb     b
-b bb   bb  bb  b   bb    b bbkbb   bb      bb     b
-b bbbbbb   bbbb b   bbbb  bbbbb    bbbb    bb     b
-b bbbbbbpbbbbbb  bb    bb  bbbb    bbbb    bb     b
-b bb   bb  bb      bb  bb  bb bb   bb      bb     b
-b bb   bb  bbbbbb  bbbbbb  bb  bb  bbbbbbb bbbbbb b
-b bb   bb  bbbbbb   bbb    bb  bb  bbbbbb bbbbbbb b
-b                                           b b   b
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb  b b   b
-b                                            b    b
-b bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb   bb  bb  b     b
-b                                b b   b   b b    b
-bb b bbbbbbb bbbb bbb  bbbbbbbb   b   b    b  b   b
-b   bPROMHYLbOWNZbYOUb   b    b    b b      b  b  b
-b bb bbbbbbb bbbb bbb b b      bbb  b      bb b   b
-b                    b     b         b    b       b
-bbb bbbbbbbbbb         bb bbb  b   b  b  b  b     b
-b    bbb b    b   bb           bb   b   br b    b b
-b  b  bbb b   blb        bb  b     b b   bb bb b bb
-b   b  b   b   b            b b  bb b bb bb       b
-b    b  b        b   b b   b   bb tb   b   bb     b
-b      bs    b    b        b      b     b   cb    b
-b                        bb            b bbbb     b
-b     b         bamjfi  be                        b
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+127 43
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+b                                                                              b          b        b  b          s            b
+b     bbbbbb    bbbbbb   bbbbb   bbb  bbb  bbbbbb  bbb    bbbbbbbbbbbbbbbbbb    b         b  b    b    b bb     b             b
+b     bbbbbbb   bbbbbb  bbbbbbb  bbb bbb   bbbbbb  bbb    b                bb    b b bbbb   b   b b   b    bbbbbbbbbbbbbbbbbb b
+b     bbb  bbb  bbb     bbb      bbb bbb   bbb     bbb    b  b b    b        b    b b      b  b b    b bb       b             b
+b     bbb  bb   bbbbb     bbb    bbbbbb    bbbbb   bbb    b   b b bbb    b    b    b  b     b  b  b b    bbbbb  b bbbbbbbbbbbbb
+b     bbbbbb    bbbbb      bbbb  bbb bbb   bbbbb   bbb    b  b b b  b          b     b b bbb  b    b            b             b
+b     bbbbbbb   bbb         bbb  bbb bbb   bbb     bbb    b   b    bb   bb  bb  b                   b     bb b  bbbbbbbbbbbbb b
+b     bbb  bbb  bbbbbb  bbbbbbb  bbb  bbb  bbbbbb  bbbbbb b  b     bb  b  b b b  bbbbbbbbbbbbbbbbbbbb    b  bb  b             b
+b     bbb  bbb  bbbbbb  bbbbbb   bbb  bbb  bbbbbb  bbbbbb    b        b   b b  b    b   b       b       b    b  b bbbbbbbbbbbbb
+bt                                                        bbb     b  b   bb     b  b  b  bb   b  b     b     b  b             b
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb    b b  b      bb    b  fb       b  b b  bb       b bbbbbbbbbjbbbbb
+be      b  b                         b                   b   b  bb   b      b    bbb b  bb   b      b     b bb   b      b b   b
+b b  bb b   b b   b b   bb  b bb bb    b bbb   b  b      b         bb      bb          b  b b    bbb    bb   b  b  bbb        b
+b  bb   b    bbb     bbb  bb bb b bbbbb bb  b b b b        b    b b        b b      bb b    bb  b  b   b       b    b  bb b   b
+bb       b     b    b                        b   b b b b b bb bb     b   b    b              b b   b b  b b  bb b    b   bb b b
+b b b     bb   b    b        b    b           bbb   b b b b           b b      bb       b   b  b    b    bb b  bb      b  bb  b
+b   b       b  bb    b      b  b   b b                     bb    b         b   b  b  bbb b b  b   b b b b  b    b   b         b
+b  b             b  b     b   b  b  bb                      b  bbb   b b        bbb b     b   b   b  b    b bb b b b  b   b b b
+b    b b    b   bb  b    b   b b       b   b               b b     bb  b b         b     b    b bb b  b bbb b b       b   b b b
+bbbb  b b b    b  b  b  b a b   b    b b bb   b    b      b       b   bbbb            l  b   b  b  b       b  bb   b  bb b    b
+b   b    b     b b   b  b   b    b    b b b  b b bbb      b        bb         b     bb bbb   b    bbb     b  b   b       bbbb b
+b       b        bb  b  bbb  b    b          b b    b        b b           b bbb   b        b       b bb     b  bb   b   b  bbb
+b   bb   b         b  bb b  b b    b b   bbb    i  b  bb    b  b     bb    b    bb  bbbbbbbb               b b bb    bb  b    b
+b   b    b      bb b b        b     b  b    b  b bb  bb bbbb    b  b    bb b      b     b  b           b  b b b  b bb         b
+b  b    bb b  bb  b  b  b bb   b   b    b b bbbb   b    bb  b     bb     b b b        b  b  b   c   bb  bb    bbb       b     b
+b    b    b    b bb b   b  bb    bb    b  b  b      bbb     bb               b      b  b  b  b    bb   b     b   bb    b      b
+b   bb   bb     b b b   b   bb  b b  b  b   b  b b           bbb        b b    b  bb    b     bbbb  b  b       bbb  bb    b   b
+b    b    b    b b  b   b bb bb     bb  b bb      bb  b              b    b    bb         b        b                bb b   b  b
+b   bbb  b       b  b      b  b    bb   b          b b  b    b     b  b     bb                    bb        bbb   bbb  bbbbb  b
+b  b b bb b   b  bb b        b           b  b b          b b   b  b                  b     b         b bbb b   b       b    b b
+b b       b  b bb   bbbb     b           b   r b        b       b  bb       bb    bbb b         b     b   b  b  b  bb bbb     b
+b   m  bbb    b   b bb  b  b b    bb    b  b    b    b bbb b  b b     b  b b bb  b      b b     b         b   b b b  b   b  b b
+bb bbbb   b bb   b bb     bb   b b  b       bb b   b bb    b b   b     b     b b         b  b            b  bb   bb    b   b bb
+b        b bb  bb b                   b b bb b   bb                bb  b b   bbb   b b   b  bb b        b     b      bb b b   b
+b b           b                          bb   b b                 b   b   b b   b b   b b  b   b bb    b bb   bbbbbbb    b    b
+b   b     bbbbb    bb                   bb          b      b   bb  b b  b             b     b b    bbbb b  b                  b
+b    bb       b   b b b   bb     bb     b bbb   bbbb  b  b b   b      bb  bb            b          b           bb   b     b   b
+b     b         bb     b b  b  b  b   b       bb       bb   b b             b bb b      b      b  b  b b b  b b  bbb bb  b   bb
+b   b               b b  b    bb    bb b             b       b           b      k b      bb     bb b  bb bbb b b    b  bb b b b
+b b b b b   b b   b b  bb  bb  b     b  bbb   b b bb  bb bb  b b  b b  b   bb      b    b bb   b  b b            b    b    b  b
+b   bb   b b   b b            b  b b        bb                   b   b       b b     bb              bb   b  b    b        p  b
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 Pierwsze dwie liczby to szerokość i wysokość mapy.
 Kolejne to symbole pól i przedmiotów.

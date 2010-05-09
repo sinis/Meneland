@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 8.05.2010
+// Data modyfikacji: 9.05.2010
 // Opis: Implementacja głównej klasy gry.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -13,6 +13,7 @@
 #include "player.h"
 #include "camera.h"
 #include "intro.h"
+#include "writer.h"
 
 // Destruktor /////////////////////////////////////////////////////////////////
 // Opis:
@@ -110,12 +111,53 @@ int Meneland::Execute()
 
 		camera->Show();
 
-		if (map->MoveHandling(player->GetX(), player->GetY(), screen) == Exit)
-			quit = true;
+		switch (map->MoveHandling(player->GetX(), player->GetY(), screen))
+		{
+			case Exit: quit = true; break;
+			case HadObject: moving = false; break; // Żeby gracz nie leciał do przodu.
+		}
 
 		if (SDL_GetTicks() - startTicks < 1000 / fps)
 			SDL_Delay(1000/fps - (SDL_GetTicks() - startTicks));
 	}
+
+	// Outro.
+	// Matko, co ja robię...
+	std::string text = "No i game over.";
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0, 0));
+	Writer::Write(text, 0, 200, screen, Center, 30, White);
+	SDL_Flip(screen);
+	Wait(2000);
+
+	text = "Wiem, że nie było fajnie.";
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0, 0));
+	Writer::Write(text, 0, 200, screen, Center, 30, White);
+	SDL_Flip(screen);
+	Wait(2000);
+
+	text = "Ale nie martw się. Kontynuacji nie będzie.";
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0, 0));
+	Writer::Write(text, 0, 200, screen, Center, 30, White);
+	SDL_Flip(screen);
+	Wait(3000);
+
+	text = "Pozdrawiam.\nSinis";
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0, 0));
+	Writer::Write(text, 0, 200, screen, Center, 30, White);
+	SDL_Flip(screen);
+	Wait(2000);
+
+	text = "A tak poza tym to podziękowania dla Promhylerów.";
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0, 0));
+	Writer::Write(text, 0, 200, screen, Center, 30, White);
+	SDL_Flip(screen);
+	Wait(3000);
+
+	text = "Dobranoc.";
+	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format, 0, 0, 0));
+	Writer::Write(text, 0, 200, screen, Center, 30, White);
+	SDL_Flip(screen);
+	Wait(2000);
 
 	return 0;
 }

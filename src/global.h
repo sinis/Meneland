@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 9.04.2010
-// Data modyfikacji: 8.05.2010
+// Data modyfikacji: 9.05.2010
 // Opis: Plik zawiera globalne symbole dla klas.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -20,6 +20,7 @@ enum Direction // Wykorzystywane przy określeniu ruchu i tekstury gracza.
 enum FieldType // Typ pola mapy.
 {
 	NoneField,
+	HadObject, // Dla pętli głównej
 	Start = 's',
 	Grass = ' ',
 	Bush = 'b',

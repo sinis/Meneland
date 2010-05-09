@@ -46,6 +46,8 @@
 		<Unit filename="src/field.h" />
 		<Unit filename="src/getpixel.cpp" />
 		<Unit filename="src/global.h" />
+		<Unit filename="src/intro.cpp" />
+		<Unit filename="src/intro.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/map.cpp" />
 		<Unit filename="src/map.h" />
@@ -61,6 +63,7 @@
 		<Unit filename="src/player.h" />
 		<Unit filename="src/visible.cpp" />
 		<Unit filename="src/visible.h" />
+		<Unit filename="src/wait.cpp" />
 		<Unit filename="src/writer.cpp" />
 		<Unit filename="src/writer.h" />
 		<Extensions>

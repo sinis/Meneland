@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 7.05.2010
+// Data modyfikacji: 9.05.2010
 // Opis: Implementacja obsługi mapy.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -49,7 +49,7 @@ Map::Map(int& playerX, int& playerY)
 		// Pętla ustawiająca właściwości pól.
 		for (int j = 0; j < w; j++)
 		{
-			FieldType fieldType;
+			FieldType fieldType = Bush;
 			ObjectType objectType = NoneObject;
 
 			switch (buffer[j])
@@ -176,13 +176,19 @@ bool Map::IsMovePossible(int x, int y, Direction dir)
 //  Funkcja przekazuje wykonanie do funkcji obsługi pola.
 // Zwraca:
 //  - Exit - jeśli gracz wszedł na pole wyjścia.
-//  - NoneField - w innym wypadku.
+//  - NoneField - jeśli pole nie posiadało obiektu i nie jest wyjściem.
+//  - HadObject - jeśli pole posiadało obiekt.
 FieldType Map::MoveHandling(int x, int y, SDL_Surface* surface)
 {
 	if (map[x][y].GetFieldType() == Exit)
 		return Exit;
 
+	bool hadObject;
+	hadObject = map[x][y].GetObject() ? true : false;
+
 	map[x][y].HandleObject(surface);
 
+	//return NoneField;
+	if (hadObject) return HadObject;
 	return NoneField;
 }
