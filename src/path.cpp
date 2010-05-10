@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 16.04.2010
-// Data modyfikacji: 16.04.2010
+// Data modyfikacji: 9.05.2010
 // Opis: Plik zawiera implementację klasy odpowiedzialnej za obsługę ścieżki
 //  dostępu do folderu roboczego.
 ///////////////////////////////////////////////////////////////////////////////
@@ -12,8 +12,7 @@
 #ifdef linux
 	#include <unistd.h>
 #elif defined _WIN32
-	#define WIN32_LEAN_AND_MEAN
-	#include <windows.h>
+	#include <direct.h>
 #endif
 
 // GetCWD /////////////////////////////////////////////////////////////////////
@@ -28,7 +27,7 @@ std::string Path::GetCWD()
 #ifdef linux
 	getcwd(cwd, sizeof(cwd));
 #elif defined _WIN32
-	GetModuleFileName(0, cwd, sizeof(cwd));
+	_getcwd(cwd, sizeof(cwd));
 #endif
 
 	return std::string(cwd);

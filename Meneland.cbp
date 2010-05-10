@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Meneland" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option output="bin\Debug\Meneland" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Meneland" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+				<Option output="bin\Release\Meneland" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -31,41 +31,42 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="`sdl-config --cflags`" />
-			<Add directory="/usr/include/c++/4.4.1" />
+			<Add directory="\usr\include\c++\4.4.1" />
+			<Add directory="C:\MinGW\include" />
 		</Compiler>
 		<Linker>
-			<Add option="`sdl-config --libs`" />
-			<Add option="-lSDL_image" />
+			<Add option="-lSDL" />
 			<Add option="-lSDL_ttf" />
+			<Add option="-lSDL_image" />
 		</Linker>
-		<Unit filename="src/button.cpp" />
-		<Unit filename="src/button.h" />
-		<Unit filename="src/camera.cpp" />
-		<Unit filename="src/camera.h" />
-		<Unit filename="src/field.cpp" />
-		<Unit filename="src/field.h" />
-		<Unit filename="src/getpixel.cpp" />
-		<Unit filename="src/global.h" />
-		<Unit filename="src/intro.cpp" />
-		<Unit filename="src/intro.h" />
-		<Unit filename="src/main.cpp" />
-		<Unit filename="src/map.cpp" />
-		<Unit filename="src/map.h" />
-		<Unit filename="src/meneland.cpp" />
-		<Unit filename="src/meneland.h" />
-		<Unit filename="src/messagebox.cpp" />
-		<Unit filename="src/messagebox.h" />
-		<Unit filename="src/object.cpp" />
-		<Unit filename="src/object.h" />
-		<Unit filename="src/path.cpp" />
-		<Unit filename="src/path.h" />
-		<Unit filename="src/player.cpp" />
-		<Unit filename="src/player.h" />
-		<Unit filename="src/visible.cpp" />
-		<Unit filename="src/visible.h" />
-		<Unit filename="src/wait.cpp" />
-		<Unit filename="src/writer.cpp" />
-		<Unit filename="src/writer.h" />
+		<Unit filename="src\button.cpp" />
+		<Unit filename="src\button.h" />
+		<Unit filename="src\camera.cpp" />
+		<Unit filename="src\camera.h" />
+		<Unit filename="src\field.cpp" />
+		<Unit filename="src\field.h" />
+		<Unit filename="src\getpixel.cpp" />
+		<Unit filename="src\global.h" />
+		<Unit filename="src\intro.cpp" />
+		<Unit filename="src\intro.h" />
+		<Unit filename="src\main.cpp" />
+		<Unit filename="src\map.cpp" />
+		<Unit filename="src\map.h" />
+		<Unit filename="src\meneland.cpp" />
+		<Unit filename="src\meneland.h" />
+		<Unit filename="src\messagebox.cpp" />
+		<Unit filename="src\messagebox.h" />
+		<Unit filename="src\object.cpp" />
+		<Unit filename="src\object.h" />
+		<Unit filename="src\path.cpp" />
+		<Unit filename="src\path.h" />
+		<Unit filename="src\player.cpp" />
+		<Unit filename="src\player.h" />
+		<Unit filename="src\visible.cpp" />
+		<Unit filename="src\visible.h" />
+		<Unit filename="src\wait.cpp" />
+		<Unit filename="src\writer.cpp" />
+		<Unit filename="src\writer.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

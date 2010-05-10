@@ -2,7 +2,7 @@
 // Projekt: Meneland
 // Autor: Sinis
 // Data utworzenia: 5.04.2010
-// Data modyfikacji: 17.04.2010
+// Data modyfikacji: 9.05.2010
 // Opis: Ot imitacja gry.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -13,11 +13,11 @@
 
 bool CheckCWD();
 
-int main()
+int main(int, char**)
 {
-	// W Linuksie wystƒôpuje problem gdy gra jest uruchamiana z po≈Ço≈ºenia
-	// innego ni≈º po≈Ço≈ºenie gry. Trzeba to za≈Çatwiƒá.
-	if (!CheckCWD()) // W≈Ça≈õciwie to to powinno byƒá w Inicie Menelandu...
+	// W Linuksie wystÍpuje problem gdy gra jest uruchamiana z po≥oøenia
+	// innego niø po≥oøenie gry. Trzeba to za≥atwiÊ.
+	if (!CheckCWD()) // W≥aúciwie to to powinno byÊ w Inicie Menelandu...
 	{
 		std::cerr << "Nie mozna odpalic gry z polozenia, w ktorym nie sa dostepne jej pliki.\n";
 		std::cerr << "Wejdz do katalogu gry i stamtad ja uruchom.\n";
@@ -35,15 +35,15 @@ int main()
 
 // CheckCWD ///////////////////////////////////////////////////////////////////
 // Opis:
-//  Funkcja sprawdza czy dostƒôpny jest plik map.txt.
+//  Funkcja sprawdza czy dostÍpny jest plik map.txt.
 // Zwraca:
-//  - true - je≈õli plik jest dostƒôpny.
-//  - false - je≈õli pliku nie ma.
+//  - true - jeúli plik jest dostÍpny.
+//  - false - jeúli pliku nie ma.
 bool CheckCWD()
 {
 	std::string map = Path::GetCWD() + "/data/map.txt";
 	std::ifstream file(map.c_str());
-	if (!file)
+	if (!file.is_open())
 		return false;
 	file.close();
 	return true;
